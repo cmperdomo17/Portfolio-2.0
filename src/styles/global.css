@@ -1,50 +1,18 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600;700&display=swap');
-
-html {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    scroll-behavior: smooth;
-    line-height: 1.5;
-}
 
 body {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Onest", sans-serif;
+    background-color: #0f172a;
+    color: #fff;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+.text-gradient {
+    background: linear-gradient(90deg, #e879f9 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.hero-gradient {
+    background: linear-gradient(120deg, #4f46e5 0%, #818cf8 100%);
 }
