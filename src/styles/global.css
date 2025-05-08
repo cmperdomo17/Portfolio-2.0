@@ -6,13 +6,6 @@ body {
     color: #fff;
 }
 
-.text-gradient {
-    background: linear-gradient(90deg, #e879f9 0%, #38bdf8 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
 .hero-gradient {
     background: linear-gradient(120deg, #4f46e5 0%, #818cf8 100%);
 }
