@@ -1,6 +1,8 @@
 ---
 import AnimatedSplitText from "@/components/ui/splitText/animatedSplitText";
 import SplitText from "@/components/ui/splitText/splitText";
+import RotatingText from "@/components/ui/rotatingText/rotatingText";
+import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 ---
 
 <section
@@ -37,142 +39,141 @@ import SplitText from "@/components/ui/splitText/splitText";
             client:load
           />
 
-          <div class="animate-fadeUp" style="--delay: 0.6s">
+          <div
+            class="flex flex-wrap items-center gap-2 animate-fadeUp"
+            style="--delay: 0.6s"
+          >
             <AnimatedSplitText
-              text="Full-Stack Developer"
+              text="Full-Stack"
               className="text-2xl md:text-3xl text-indigo-300 font-bold"
               client:load
-              x={0}
-              y={0}
               duration={0.8}
               stagger={0.08}
             />
-          </div>
 
-          <div class="animate-fadeUp" style="--delay: 0.8s">
-            <AnimatedSplitText
-              text="I craft digital experiences that blend creativity with technical excellence. Specializing in creating modern, responsive, and user-friendly web applications."
-              className="text-gray-300 text-lg max-w-lg"
+            <div class="relative h-[38px] md:h-[44px] flex items-center">
+              <RotatingText
+              texts={["Developer", "Engineer", "Architect", "Designer"]}
+              mainClassName="text-2xl md:text-3xl text-white overflow-hidden font-bold"
+              staggerFrom={"last"}
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-120%", opacity: 0 }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={3000}
               client:load
-              x={0}
-              y={10}
-              duration={1}
-              stagger={0.01}
-            />
+              />
+            </div>
           </div>
-        </div>
 
-        <div
-          class="flex flex-wrap gap-4 pt-4 animate-fadeUp"
-          style="--delay: 1s"
-        >
-          <a
-            href="#projects"
-            class="btn-primary bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 text-white py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50"
-          >
-            <i class="ri-eye-line"></i> View My Work
-          </a>
-          <a
-            href="#contact"
-            class="btn-secondary border border-indigo-500 text-white py-3 px-8 rounded-full hover:bg-indigo-500/20 transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-sm"
-          >
-            <i class="ri-chat-1-line"></i> Contact Me
-          </a>
-        </div>
-
-        <div class="flex gap-6 pt-4 animate-fadeUp" style="--delay: 1.2s">
-          <a href="#" class="social-icon" aria-label="GitHub">
-            <i class="ri-github-fill"></i>
-          </a>
-          <a href="#" class="social-icon" aria-label="LinkedIn">
-            <i class="ri-linkedin-fill"></i>
-          </a>
-          <a href="#" class="social-icon" aria-label="Twitter">
-            <i class="ri-twitter-x-fill"></i>
-          </a>
-          <a href="#" class="social-icon" aria-label="Dribbble">
-            <i class="ri-dribbble-line"></i>
-          </a>
+        <div class="animate-fadeUp" style="--delay: 0.8s">
+          <AnimatedSplitText
+            text="I craft digital experiences that blend creativity with technical excellence. Specializing in creating modern, responsive, and user-friendly web applications."
+            className="text-gray-300 text-lg max-w-lg"
+            client:load
+            x={0}
+            y={20}
+            duration={1}
+            stagger={0.01}
+          />
         </div>
       </div>
 
-      <!-- Hero Image -->
+      <div class="flex flex-wrap gap-4 pt-4 animate-fadeUp" style="--delay: 1s">
+        <a
+          href="#projects"
+          class="btn-primary bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 text-white py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50"
+        >
+          <i class="ri-eye-line"></i> View My Work
+        </a>
+        <a
+          href="#contact"
+          class="btn-secondary border border-indigo-500 text-white py-3 px-8 rounded-full hover:bg-indigo-500/20 transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-sm"
+        >
+          <i class="ri-chat-1-line"></i> Contact Me
+        </a>
+      </div>
+      <SocialLinks />
+    </div>
+
+    <!-- Hero Image -->
+    <div
+      class="relative max-w-md mx-auto md:ml-auto animate-fadeIn"
+      style="--delay: 0.5s"
+    >
+      <div class="hero-gradients absolute inset-0 rounded-2xl"></div>
       <div
-        class="relative max-w-md mx-auto md:ml-auto animate-fadeIn"
-        style="--delay: 0.5s"
+        class="profile-card relative z-10 border-4 border-indigo-500/20 p-4 rounded-2xl bg-slate-800/50 backdrop-blur-md hover:border-indigo-500/40 transition-all duration-500 shadow-xl"
       >
-        <div class="hero-gradients absolute inset-0 rounded-2xl"></div>
         <div
-          class="profile-card relative z-10 border-4 border-indigo-500/20 p-4 rounded-2xl bg-slate-800/50 backdrop-blur-md hover:border-indigo-500/40 transition-all duration-500 shadow-xl"
+          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-indigo-900/30 rounded-xl z-10"
         >
-          <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-indigo-900/30 rounded-xl z-10"
-          >
-          </div>
+        </div>
 
-          <img
-            src="/images/profile.png"
-            alt="Mario Perdomo - Developer Portrait"
-            class="w-full h-auto rounded-xl relative z-0"
+        <img
+          src="/images/profile.png"
+          alt="Mario Perdomo - Developer Portrait"
+          class="w-full h-auto rounded-xl relative profile-img"
+        />
+
+        <div
+          class="code-badge absolute -bottom-6 -right-6 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300"
+        >
+          <i class="ri-code-s-slash-line text-3xl"></i>
+        </div>
+
+        <div
+          class="absolute top-2 right-2 w-20 h-20 border-t-2 border-r-2 border-indigo-500/30 rounded-tr-lg"
+        >
+        </div>
+        <div
+          class="absolute bottom-2 left-2 w-20 h-20 border-b-2 border-l-2 border-indigo-500/30 rounded-bl-lg"
+        >
+        </div>
+      </div>
+
+      <!-- Tech Stack Pills -->
+      <div
+        class="tech-stack absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-3 justify-center w-full"
+      >
+        <span class="tech-pill">
+          <i class="ri-reactjs-fill"></i>
+          <AnimatedSplitText
+            text="React"
+            className="text-sm"
+            client:load
+            x={0}
+            y={0}
+            duration={0.3}
+            stagger={0.05}
           />
-
-          <div
-            class="code-badge absolute -bottom-6 -right-6 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300"
-          >
-            <i class="ri-code-s-slash-line text-3xl"></i>
-          </div>
-
-          <div
-            class="absolute top-2 right-2 w-20 h-20 border-t-2 border-r-2 border-indigo-500/30 rounded-tr-lg"
-          >
-          </div>
-          <div
-            class="absolute bottom-2 left-2 w-20 h-20 border-b-2 border-l-2 border-indigo-500/30 rounded-bl-lg"
-          >
-          </div>
-        </div>
-
-        <!-- Tech Stack Pills -->
-        <div
-          class="tech-stack absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-3 justify-center w-full"
-        >
-          <span class="tech-pill">
-            <i class="ri-reactjs-fill"></i>
-            <AnimatedSplitText
-              text="React"
-              className="text-sm"
-              client:load
-              x={0}
-              y={0}
-              duration={0.3}
-              stagger={0.05}
-            />
-          </span>
-          <span class="tech-pill">
-            <i class="ri-nodejs-fill"></i>
-            <AnimatedSplitText
-              text="Node.js"
-              className="text-sm"
-              client:load
-              x={0}
-              y={0}
-              duration={0.3}
-              stagger={0.05}
-            />
-          </span>
-          <span class="tech-pill">
-            <i class="ri-code-s-slash-line"></i>
-            <AnimatedSplitText
-              text="Tailwind"
-              className="text-sm"
-              client:load
-              x={0}
-              y={0}
-              duration={0.3}
-              stagger={0.05}
-            />
-          </span>
-        </div>
+        </span>
+        <span class="tech-pill">
+          <i class="ri-nodejs-fill"></i>
+          <AnimatedSplitText
+            text="Node.js"
+            className="text-sm"
+            client:load
+            x={0}
+            y={0}
+            duration={0.3}
+            stagger={0.05}
+          />
+        </span>
+        <span class="tech-pill">
+          <i class="ri-code-s-slash-line"></i>
+          <AnimatedSplitText
+            text="Tailwind"
+            className="text-sm"
+            client:load
+            x={0}
+            y={0}
+            duration={0.3}
+            stagger={0.05}
+          />
+        </span>
       </div>
     </div>
   </div>
