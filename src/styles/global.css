@@ -68,7 +68,7 @@ body {
 .hero-gradients {
     background:
         radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.4) 0%, transparent 30%),
-        radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.4) 0%, transparent 30%);
+        radial-gradient(circle at 80% 80%, #a855f766 0%, transparent 30%);
     filter: blur(70px);
     opacity: 0.6;
 }

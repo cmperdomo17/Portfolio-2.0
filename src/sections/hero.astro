@@ -3,14 +3,13 @@ import AnimatedSplitText from "@/components/ui/splitText/animatedSplitText";
 import SplitText from "@/components/ui/splitText/splitText";
 import RotatingText from "@/components/ui/rotatingText/rotatingText";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
-import { LayoutGroup, motion } from "framer-motion";
+import Particles from "@/components/ui/Backgrounds/Particles/Particles";
 ---
 
 <section
   id="hero"
   class="min-h-screen pt-24 pb-16 flex items-center relative overflow-hidden"
 >
-  <div id="particles-container" class="absolute inset-0"></div>
   <div class="container mx-auto px-4 md:px-8">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Hero Content -->
@@ -98,6 +97,7 @@ import { LayoutGroup, motion } from "framer-motion";
           >
             <i class="ri-eye-line"></i> View My Work
           </a>
+
           <a
             href="#contact"
             class="btn-secondary border border-indigo-500 text-white py-3 px-8 rounded-full hover:bg-indigo-500/20 transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-sm"
@@ -186,6 +186,20 @@ import { LayoutGroup, motion } from "framer-motion";
           </span>
         </div>
       </div>
+    </div>
+    <div class="absolute inset-0 -z-10">
+      <Particles
+        particleColors={["#818cf8", "#818cf8"]}
+        className={""}
+        particleCount={200}
+        particleSpread={12}
+        speed={0.07}
+        particleBaseSize={150}
+        moveParticlesOnHover={false}
+        alphaParticles={true}
+        disableRotation={false}
+        client:load
+      />
     </div>
   </div>
 </section>
