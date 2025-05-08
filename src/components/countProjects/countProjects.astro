@@ -1,0 +1,65 @@
+---
+import CountUp from "@/components/ui/countUp/countUp";
+---
+
+<div
+  class="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fadeUp py-80"
+  style="--delay: 0.9s"
+>
+  <div class="text-center">
+    <CountUp
+      from={0}
+      to={3}
+      separator=","
+      direction="up"
+      duration={1}
+      className="text-4xl font-bold text-white"
+      onStart={() => console.log("CountUp started")}
+      onEnd={() => console.log("CountUp ended")}
+      client:load
+    />
+    <p class="text-gray-300 text-sm mt-2">Sections</p>
+  </div>
+  <div class="text-center">
+    <CountUp
+      from={0}
+      to={12}
+      separator=","
+      direction="up"
+      duration={1}
+      className="text-4xl font-bold text-white"
+      onStart={() => console.log("CountUp started")}
+      onEnd={() => console.log("CountUp ended")}
+      client:load
+    />
+    <p class="text-gray-300 text-sm mt-2">Projects</p>
+  </div>
+  <div class="text-center">
+    <CountUp
+      from={0}
+      to={3}
+      separator=","
+      direction="up"
+      duration={1}
+      className="text-4xl font-bold text-white"
+      onStart={() => console.log("CountUp started")}
+      onEnd={() => console.log("CountUp ended")}
+      client:load
+    />
+    <p class="text-gray-300 text-sm mt-2">Years Experience</p>
+  </div>
+  <div class="text-center">
+    <CountUp
+      from={0}
+      to={50}
+      separator=","
+      direction="up"
+      duration={1}
+      className="text-4xl font-bold text-white"
+      onStart={() => console.log("CountUp started")}
+      onEnd={() => console.log("CountUp ended")}
+      client:load
+    />
+    <p class="text-gray-300 text-sm mt-2">Happy Clients</p>
+  </div>
+</div>
