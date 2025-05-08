@@ -109,3 +109,24 @@ body {
 .profile-card:hover {
     transform: translateY(-5px) scale(1.02);
 }
+
+.profile-img {
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 80%,
+            transparent
+        ),
+        linear-gradient(
+            to bottom right,
+            black 70%,
+            transparent
+        ),
+        linear-gradient(
+            to bottom left,
+            black 70%,
+            transparent
+        );
+    mask-composite: intersect;
+    -webkit-mask-composite: intersect;
+}
