@@ -1,0 +1,21 @@
+import Particles from "@/components/ui/particles/particles.jsx";
+import { BackgroundBeams } from "@/components/ui/background-beams/background-beams";
+
+export default function AnimatedBackground() {
+  return (
+    <div className="absolute h-full w-full inset-0 -z-10">
+      <Particles
+        particleColors={["#818cf8", "#818cf8"]}
+        className=""
+        particleCount={200}
+        particleSpread={12}
+        speed={0.07}
+        particleBaseSize={150}
+        moveParticlesOnHover={false}
+        alphaParticles={true}
+        disableRotation={false}
+      />
+      <BackgroundBeams />
+    </div>
+  );
+}

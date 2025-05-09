@@ -3,7 +3,7 @@ import AnimatedSplitText from "@/components/ui/splitText/animatedSplitText";
 import SplitText from "@/components/ui/splitText/splitText";
 import RotatingText from "@/components/ui/rotatingText/rotatingText";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
-import Particles from "@/components/ui/particles/particles";
+
 ---
 
 <section
@@ -187,19 +187,6 @@ import Particles from "@/components/ui/particles/particles";
         </div>
       </div>
     </div>
-    <div class="absolute inset-0 -z-10">
-      <Particles
-        particleColors={["#818cf8", "#818cf8"]}
-        className={""}
-        particleCount={200}
-        particleSpread={12}
-        speed={0.07}
-        particleBaseSize={150}
-        moveParticlesOnHover={false}
-        alphaParticles={true}
-        disableRotation={false}
-        client:load
-      />
-    </div>
+
   </div>
 </section>

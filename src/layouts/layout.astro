@@ -2,6 +2,7 @@
 import Footer from "@/sections/footer.astro";
 import Header from "@/sections/header.astro";
 import "@/styles/global.css";
+import AnimatedBackground from "@/components/animatedBackground/animatedBackground";
 ---
 
 <!doctype html>
@@ -10,15 +11,24 @@ import "@/styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Mario Dev</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <meta
       name="description"
@@ -26,6 +36,7 @@ import "@/styles/global.css";
     />
   </head>
   <body>
+    <AnimatedBackground client:load />
     <Header />
     <main>
       <slot />
