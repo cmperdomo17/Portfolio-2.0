@@ -1,4 +1,4 @@
-import Particles from "@/components/ui/particles/particles.jsx";
+import Particles from "@/animations/particles/particles.jsx";
 
 export default function AnimatedBackground() {
   return (

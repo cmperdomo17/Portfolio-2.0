@@ -1,9 +1,11 @@
 ---
-import AnimatedSplitText from "@/components/ui/splitText/animatedSplitText";
-import SplitText from "@/components/ui/splitText/splitText";
-import RotatingText from "@/components/ui/rotatingText/rotatingText";
+import AnimatedSplitText from "@/animations/splitText/gsap/animatedSplitText";
+import SplitText from "@/animations/splitText/reactbits/splitText";
+import RotatingText from "@/animations/rotatingText/rotatingText";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
-
+import GradientText from "@/animations/gradientText/gradientText";
+import SplitGradientText from "@/animations/splitGradientText/splitGradientText";
+import type { Children } from "react";
 ---
 
 <section
@@ -32,10 +34,13 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
         </div>
 
         <div class="flex flex-col gap-6 pt-2">
-          <SplitText
-            text="Hi, I'm Mario Perdomo"
-            className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold"
-            textAlign="left"
+          <SplitGradientText
+            text="Hi, I'm"
+            gradientText="Mario Perdomo"
+            className="animate-gradient"
+            textClass="text-white"
+            colors={["#40ffaa", "#4079ff"]}
+            animationSpeed={4}
             client:load
           />
 
@@ -187,6 +192,5 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
         </div>
       </div>
     </div>
-
   </div>
 </section>
