@@ -4,12 +4,12 @@ export default function AnimatedBackground() {
   return (
     <div className="absolute h-full w-full inset-0 -z-10">
       <Particles
-        particleColors={["#6c757d", "#6c757d"]}
+        particleColors={["#02C3BD", "#02C3BD"]}
         className=""
         particleCount={200}
         particleSpread={12}
-        speed={0.07}
-        particleBaseSize={150}
+        speed={0.05}
+        particleBaseSize={120}
         moveParticlesOnHover={false}
         alphaParticles={true}
         disableRotation={false}

@@ -3,18 +3,20 @@ import AnimatedSplitText from "@/animations/splitText/gsap/animatedSplitText";
 import RotatingText from "@/animations/rotatingText/rotatingText";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 import CardImage from "@/components/cardImage/cardImage.astro";
+
 ---
 
 <section
   id="hero"
   class="min-h-screen pt-24 pb-16 flex items-center relative overflow-hidden"
 >
+
   <div class="container mx-auto px-4 md:px-8">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Hero Content -->
       <div class="space-y-7 reveal-content">
         <div
-          class="inline-block py-1 px-3 rounded-full bg-first/10 border border-indigo-500 text-sm mb-2 animate-fadeUp"
+          class="inline-block py-1 px-3 rounded-full bg-first/10 border border-second text-sm mb-2 animate-fadeUp"
           style="--delay: 0.2s"
         >
           <span class="flex items-center gap-2">
@@ -45,7 +47,7 @@ import CardImage from "@/components/cardImage/cardImage.astro";
           <div class="flex animate-fadeUp" style="--delay: 0.8s">
             <AnimatedSplitText
               text="Hi, I'm Mario Perdomo"
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white"
+              className="text-5xl md:text-5xl lg:text-6xl font-extrabold text-white"
               client:load
               x={0}
               y={20}
@@ -75,7 +77,7 @@ import CardImage from "@/components/cardImage/cardImage.astro";
                   "Software",
                   "User Experiences",
                 ]}
-                mainClassName="text-2xl md:text-3xl bg-second px-2 rounded-lg text-base overflow-hidden font-bold"
+                mainClassName="text-2xl md:text-3xl bg-second px-2 rounded-lg text-bg overflow-hidden font-bold"
                 staggerFrom={"last"}
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -108,14 +110,14 @@ import CardImage from "@/components/cardImage/cardImage.astro";
         >
             <a
             href="#projects"
-            class="btn-primary bg-gradient-to-r from-first/70 to-second/50 text-white py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium"
+            class="btn-primary bg-gradient-to-r from-second/10 to-second/30 border border-second text-white py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium"
           >
             <i class="ri-eye-line"></i> View My Work
           </a>
 
           <a
             href="#contact"
-            class="btn-secondary border border-indigo-500 text-white py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-sm "
+            class="btn-secondary border border-second text-white py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-sm "
           >
             <i class="ri-chat-1-line"></i> Contact Me
           </a>

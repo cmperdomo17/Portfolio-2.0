@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --color-base: #09090b;
+    --color-bg: #09090b;
     --color-first: #223a4e;
     --color-second: #02C3BD;
     --color-third: #037171;
@@ -16,6 +16,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 main {
@@ -23,7 +24,7 @@ main {
 }
 
 body {
-    background-color: #09090b;
+    background-color: var(--color-bg);
     color: #fff;
     font-family: "Onest", sans-serif;
 }
@@ -100,35 +101,6 @@ body {
     box-shadow: 0 5px 15px rgba(43, 56, 70, 0.4); /* #2b3846 */
 }
 
-
-/* Tech pills */
-.tech-pill {
-    background-color: rgba(54, 85, 109, 0.9); /* #36556d */
-    backdrop-filter: blur(5px);
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    border: 1px solid rgba(43, 56, 70, 0.3); /* #2b3846 */
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    transition: all 0.3s ease;
-    transform: translateY(0);
-    box-shadow: 0 4px 6px -1px rgba(116, 177, 210, 0.1), 0 2px 4px -1px rgba(44, 56, 70, 0.06);
-}
-
-.tech-pill:hover {
-    background-color: #2b3846;
-    border-color: #74b1d2;
-    transform: translateY(5px);
-    box-shadow: 0 -5px 15px -3px rgba(194, 234, 255, 0.1), 0 -2px 4px -2px rgba(44, 56, 70, 0.05);
-}
-
-.tech-stack {
-    animation: fadeUp 0.8s forwards;
-    animation-delay: 1.5s;
-    opacity: 0;
-}
 
 .profile-card {
     transition: transform 0.5s ease-out;
