@@ -1,7 +1,15 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+@theme {
+    --color-base: #09090b;
+    --color-first: #223a4e;
+    --color-second: #02C3BD;
+    --color-third: #037171;
+    --color-fourth: #009F93;
+}
 
 html,
 body {
@@ -15,13 +23,9 @@ main {
 }
 
 body {
-    font-family: "Onest", sans-serif;
-    background-color: #0f172a;
+    background-color: #09090b;
     color: #fff;
-}
-
-.hero-gradient {
-    background: linear-gradient(120deg, #4f46e5 0%, #818cf8 100%);
+    font-family: "Onest", sans-serif;
 }
 
 @keyframes gradient {
@@ -83,49 +87,41 @@ body {
     width: 40px;
     height: 40px;
     font-size: 1.25rem;
-    color: #a5b4fc;
+    color: #45657e;
     border-radius: 50%;
-    background-color: rgba(79, 70, 229, 0.1);
+    background-color: rgba(116, 177, 210, 0.1); /* #74b1d2 */
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #ffffff;
-    background-color: rgba(79, 70, 229, 0.3);
+    color: #c2eaff;
+    background-color: rgba(54, 85, 109, 0.3); /* #36556d */
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 5px 15px rgba(43, 56, 70, 0.4); /* #2b3846 */
 }
 
-/* Hero gradients */
-.hero-gradients {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.4) 0%, transparent 30%),
-        radial-gradient(circle at 80% 80%, #a855f766 0%, transparent 30%);
-    filter: blur(70px);
-    opacity: 0.6;
-}
 
 /* Tech pills */
 .tech-pill {
-    background-color: rgba(30, 41, 59, 0.9);
+    background-color: rgba(54, 85, 109, 0.9); /* #36556d */
     backdrop-filter: blur(5px);
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     font-size: 0.875rem;
-    border: 1px solid rgba(79, 70, 229, 0.3);
+    border: 1px solid rgba(43, 56, 70, 0.3); /* #2b3846 */
     display: flex;
     align-items: center;
     gap: 0.25rem;
     transition: all 0.3s ease;
     transform: translateY(0);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(116, 177, 210, 0.1), 0 2px 4px -1px rgba(44, 56, 70, 0.06);
 }
 
 .tech-pill:hover {
-    background-color: rgba(30, 41, 59, 1);
-    border-color: #4f46e599;
+    background-color: #2b3846;
+    border-color: #74b1d2;
     transform: translateY(5px);
-    box-shadow: 0 -5px 15px -3px rgba(0, 0, 0, 0.1), 0 -2px 4px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -5px 15px -3px rgba(194, 234, 255, 0.1), 0 -2px 4px -2px rgba(44, 56, 70, 0.05);
 }
 
 .tech-stack {
@@ -162,6 +158,7 @@ body {
             transparent);
     mask-composite: intersect;
     -webkit-mask-composite: intersect;
+    opacity: 0.8;
 }
 
 @theme inline {

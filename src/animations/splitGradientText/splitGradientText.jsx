@@ -8,7 +8,7 @@ export default function SplitGradientText({
   sharedTextClass = "text-4xl md:text-5xl lg:text-6xl font-extrabold",
   textClass = "text-white",
   gradientClass = "",
-  colors = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#615fff"],
+  colors = ["#42d9c8", "#037171", "#42d9c8", "#037171"],
   animationSpeed = 6,
   textAlign = "left",
   clientLoad = true,
@@ -69,7 +69,7 @@ export default function SplitGradientText({
     backgroundSize: "200% auto",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
-    animation: `gradient ${animationSpeed}s linear infinite`,
+    animation: `gradient ${animationSpeed} linear infinite`,
   };
 
   return (

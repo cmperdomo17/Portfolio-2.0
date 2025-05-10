@@ -4,7 +4,7 @@ import GradientText from "@/animations/gradientText/gradientText";
 
 <header
   id="navbar"
-  class="fixed bg-[#0f172a]/90 w-full top-0 left-0 z-50 transition-all duration-300 py-4"
+  class="fixed bg-[#09090b]/90 w-full top-0 left-0 z-50 transition-all duration-300 py-4"
 >
   <div class="container mx-auto px-4 md:px-8">
     <div class="flex justify-between items-center">
@@ -14,7 +14,7 @@ import GradientText from "@/animations/gradientText/gradientText";
         class="text-2xl font-bold text-gradient flex items-center gap-2"
       >
         <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#615fff"]}
+          colors={["#42d9c8", "#037171", "#42d9c8", "#037171"]}
           animationSpeed={6}
           showBorder={false}
           className=""
@@ -49,19 +49,26 @@ import GradientText from "@/animations/gradientText/gradientText";
         >
         <a
           href="#"
-          class="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 rounded-full transition-all duration-300 flex items-center gap-2"
+          class="bg-[#42d9c8] hover:bg-indigo-700 text-[#09090b] font-semibold py-2 px-6 rounded-full transition-all duration-300 flex items-center gap-2"
         >
           <i class="ti ti-download"></i>
-          Resume 
-        </a
-        > 
+          Resume
+        </a>
       </nav>
-    </div>
 
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden text-2xl">
-      <i class="ti ti-menu"></i>
-    </button>
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-2xl">
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#615fff"]}
+          animationSpeed={6}
+          showBorder={false}
+          className=""
+          client:load
+        >
+          <i class="ti ti-menu"></i>
+        </GradientText>
+      </button>
+    </div>
   </div>
 </header>
 
