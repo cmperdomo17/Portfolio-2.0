@@ -88,19 +88,18 @@ body {
     width: 40px;
     height: 40px;
     font-size: 1.25rem;
-    color: #45657e;
+    @apply text-second/60;
     border-radius: 50%;
-    background-color: rgba(116, 177, 210, 0.1); /* #74b1d2 */
+    @apply bg-fourth/10;
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #c2eaff;
-    background-color: rgba(54, 85, 109, 0.3); /* #36556d */
+    @apply text-white;
+    @apply bg-fourth/30;
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(43, 56, 70, 0.4); /* #2b3846 */
+    box-shadow: 0 5px 15px color-mix(in srgb, var(--color-second) 40%, transparent);
 }
-
 
 .profile-card {
     transition: transform 0.5s ease-out;
