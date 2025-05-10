@@ -1,5 +1,4 @@
 import Particles from "@/components/ui/particles/particles.jsx";
-import { BackgroundBeams } from "@/components/ui/background-beams/background-beams";
 
 export default function AnimatedBackground() {
   return (
@@ -15,7 +14,6 @@ export default function AnimatedBackground() {
         alphaParticles={true}
         disableRotation={false}
       />
-      <BackgroundBeams />
     </div>
   );
 }
