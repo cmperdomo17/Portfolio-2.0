@@ -7,7 +7,7 @@
   <div class="container mx-auto px-4 md:px-8">
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-5xl font-extrabold bg-gradient-to-r from-indigo-400 to-white text-transparent bg-clip-text mb-4">
+      <h2 class="text-5xl font-extrabold bg-gradient-to-r from-fourth to-text text-transparent bg-clip-text mb-4">
         <span class="text-gradient">Featured Projects</span>
       </h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
@@ -18,19 +18,19 @@
       <!-- Filter Buttons -->
       <div class="flex flex-wrap justify-center gap-3 mt-8">
         <button
-          class="filter-btn active py-2 px-5 rounded-full text-sm font-medium bg-indigo-600 text-white transition-all duration-300"
+          class="filter-btn active py-2 px-5 rounded-full text-sm font-medium bg-indigo-600 text-text transition-all duration-300"
           data-filter="all">All Projects</button
         >
         <button
-          class="filter-btn py-2 px-5 rounded-full text-sm font-medium bg-slate-800 text-gray-300 hover:bg-indigo-600/20 hover:text-white border border-indigo-500/30 transition-all duration-300"
+          class="filter-btn py-2 px-5 rounded-full text-sm font-medium bg-slate-800 text-gray-300 hover:bg-indigo-600/20 hover:text-text border border-indigo-500/30 transition-all duration-300"
           data-filter="web">Web Apps</button
         >
         <button
-          class="filter-btn py-2 px-5 rounded-full text-sm font-medium bg-slate-800 text-gray-300 hover:bg-indigo-600/20 hover:text-white border border-indigo-500/30 transition-all duration-300"
+          class="filter-btn py-2 px-5 rounded-full text-sm font-medium bg-slate-800 text-gray-300 hover:bg-indigo-600/20 hover:text-text border border-indigo-500/30 transition-all duration-300"
           data-filter="mobile">Mobile</button
         >
         <button
-          class="filter-btn py-2 px-5 rounded-full text-sm font-medium bg-slate-800 text-gray-300 hover:bg-indigo-600/20 hover:text-white border border-indigo-500/30 transition-all duration-300"
+          class="filter-btn py-2 px-5 rounded-full text-sm font-medium bg-slate-800 text-gray-300 hover:bg-indigo-600/20 hover:text-text border border-indigo-500/30 transition-all duration-300"
           data-filter="ui">UI/UX</button
         >
       </div>
@@ -91,7 +91,7 @@
 
           <!-- Project Content -->
           <div class="p-6">
-        <h3 class="text-xl font-semibold mb-2 text-white">
+        <h3 class="text-xl font-semibold mb-2 text-text">
           Personal Portfolio Website
         </h3>
         <p class="text-gray-400 mb-4">
@@ -172,7 +172,7 @@
 
           <!-- Project Content -->
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-white">
+            <h3 class="text-xl font-semibold mb-2 text-text">
               Fitness Tracking App
             </h3>
             <p class="text-gray-400 mb-4">
@@ -247,7 +247,7 @@
 
           <!-- Project Content -->
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-white">
+            <h3 class="text-xl font-semibold mb-2 text-text">
               Dashboard UI Kit
             </h3>
             <p class="text-gray-400 mb-4">
@@ -333,7 +333,7 @@
 
           <!-- Project Content -->
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-white">
+            <h3 class="text-xl font-semibold mb-2 text-text">
               AI Content Platform
             </h3>
             <p class="text-gray-400 mb-4">
@@ -415,7 +415,7 @@
 
           <!-- Project Content -->
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-white">
+            <h3 class="text-xl font-semibold mb-2 text-text">
               Travel Companion App
             </h3>
             <p class="text-gray-400 mb-4">
@@ -490,7 +490,7 @@
 
           <!-- Project Content -->
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 text-white">
+            <h3 class="text-xl font-semibold mb-2 text-text">
               Educational Platform Redesign
             </h3>
             <p class="text-gray-400 mb-4">
@@ -527,7 +527,7 @@
     <!-- Load More Button -->
     <div class="text-center mt-12">
       <button
-        class="bg-slate-800 hover:bg-indigo-600 text-white py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 mx-auto"
+        class="bg-slate-800 hover:bg-indigo-600 text-text py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 mx-auto"
       >
         <i class="ri-refresh-line"></i> Load More Projects
       </button>
@@ -544,23 +544,23 @@
         btn.addEventListener("click", () => {
           // Update active button
           filterBtns.forEach((b) => {
-            b.classList.remove("active", "bg-indigo-600", "text-white");
+            b.classList.remove("active", "bg-indigo-600", "text-text");
             b.classList.add(
               "bg-slate-800",
               "text-gray-300",
               "hover:bg-indigo-600/20",
-              "hover:text-white",
+              "hover:text-text",
               "border",
               "border-indigo-500/30"
             );
           });
 
-          btn.classList.add("active", "bg-indigo-600", "text-white");
+          btn.classList.add("active", "bg-indigo-600", "text-text");
           btn.classList.remove(
             "bg-slate-800",
             "text-gray-300",
             "hover:bg-indigo-600/20",
-            "hover:text-white",
+            "hover:text-text",
             "border",
             "border-indigo-500/30"
           );
