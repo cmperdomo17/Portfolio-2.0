@@ -1,7 +1,7 @@
 export default function GradientText({
   children,
   className = "",
-  colors = ["#ffaa40", "#9c40ff", "#ffaa40"],
+  colors = ["#42d9c8", "#338b80", "#42d9c8", "#338b80"],
   animationSpeed = 8,
   showBorder = false,
 }) {
@@ -12,7 +12,7 @@ export default function GradientText({
 
   return (
     <div
-      className={`relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-[1.25rem] backdrop-blur transition-shadow duration-500 overflow-hidden ${className}`}
+      className={`relative flex max-w-fit flex-row items-center justify-center rounded-[1.25rem] backdrop-blur transition-shadow duration-500 overflow-hidden ${className}`}
     >
       {showBorder && (
         <div

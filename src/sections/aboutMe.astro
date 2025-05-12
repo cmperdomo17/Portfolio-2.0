@@ -1,4 +1,6 @@
 ---
+import GradientText from "@/animations/gradientText/gradientText";
+
 ---
 
 <section id="about" class="py-24">
@@ -51,7 +53,7 @@
             class="absolute -bottom-6 -right-6 bg-background/70 rounded-2xl p-4 shadow-lg border border-primary"
           >
             <div class="text-center">
-              <span class="text-3xl font-bold text-primary">5+</span>
+              <span class="text-3xl font-bold text-primary">3+</span>
               <p class="text-gray-300 text-sm">Years of Experience</p>
             </div>
           </div>
@@ -60,9 +62,15 @@
 
       <!-- About Content -->
       <div class="space-y-6">
-        <h3 class="text-2xl font-semibold">
+        <GradientText
+          colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
+          animationSpeed={10}
+          showBorder={false}
+          className="font-semibold text-2xl mb-4"
+          client:load
+        >
           Full-Stack Developer with a Frontend Focus
-        </h3>
+        </GradientText>
 
         <p class="text-gray-300">
           I'm a web developer with over 5 years of experience, specializing in
@@ -80,7 +88,15 @@
         </p>
 
         <div class="pt-4">
-          <h4 class="text-xl font-medium mb-4">My Tech Stack</h4>
+            <GradientText
+            colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
+            animationSpeed={10}
+            showBorder={false}
+            className="font-bold text-xl mb-4"
+            client:load
+            >
+            My Tech Stack
+            </GradientText>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div
               class="skill-item flex items-center gap-3 bg-bg/70 p-3 rounded-lg border border-primary/40 hover:border-primary transition-colors duration-300"

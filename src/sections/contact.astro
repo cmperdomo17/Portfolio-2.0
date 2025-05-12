@@ -1,7 +1,5 @@
 ---
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
-
-
 ---
 
 <section id="contact" class="py-20 relative overflow-hidden">
@@ -20,10 +18,12 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
   <div class="container mx-auto px-4 md:px-8 relative z-10">
     <!-- Section Header -->
     <div class="text-center mb-12">
-      <h2 class="text-5xl font-extrabold bg-gradient-to-r from-primary to-white text-transparent bg-clip-text mb-4">
+      <h2
+        class="text-5xl font-extrabold bg-gradient-to-r from-primary to-white text-transparent bg-clip-text mb-4"
+      >
         Get In <span class="text-gradient">Touch</span>
       </h2>
-      <p class="text-primary max-w-2xl mx-auto">
+      <p class="text-text/80 max-w-2xl mx-auto">
         Have a project in mind or want to collaborate? Feel free to reach out
         using the form below or through my social media channels.
       </p>
@@ -44,11 +44,11 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <i class="ri-mail-line text-xl text-primary"></i>
             </div>
             <div>
-              <h4 class="text-lg font-medium text-text">Email</h4>
+              <h4 class="text-lg font-medium text-primary">Email</h4>
               <a
                 href="cmperdomo7@gmail.com"
-                class="text-primary hover:text-white transition-colors"
-                >cmperdomo7@gmail</a
+                class="text-text hover:text-primary transition-colors duration-500"
+                >cmperdomo7@gmail.com</a
               >
             </div>
           </div>
@@ -58,8 +58,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <i class="ri-map-pin-line text-xl text-primary"></i>
             </div>
             <div>
-              <h4 class="text-lg font-medium text-text">Location</h4>
-              <p class="text-primary">Pitalito - Huila</p>
+              <h4 class="text-lg font-medium text-primary">Location</h4>
+              <p class="text-text">Pitalito - Huila</p>
             </div>
           </div>
 
@@ -68,8 +68,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <i class="ri-time-line text-xl text-primary"></i>
             </div>
             <div>
-              <h4 class="text-lg font-medium text-text">Availability</h4>
-              <p class="text-primary">Mon-Fri, 9AM-6PM PST</p>
+              <h4 class="text-lg font-medium text-primary">Availability</h4>
+              <p class="text-text">Mon-Fri, 9AM-6PM PST</p>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
         <!-- Social Media Links -->
         <div class="mt-8">
           <h4 class="text-lg font-medium mb-2">Connect With Me</h4>
-            <SocialLinks />
+          <SocialLinks />
         </div>
       </div>
 
@@ -123,8 +123,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           </div>
 
           <div class="form-group">
-            <label for="subject" class="block text-primary mb-2">Subject</label
-            >
+            <label for="subject" class="block text-primary mb-2">Subject</label>
             <div class="relative">
               <i
                 class="ri-bookmark-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -139,8 +138,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           </div>
 
           <div class="form-group">
-            <label for="message" class="block text-primary mb-2">Message</label
-            >
+            <label for="message" class="block text-primary mb-2">Message</label>
             <div class="relative">
               <i class="ri-chat-1-line absolute left-3 top-3 text-gray-400"></i>
               <textarea

@@ -1,5 +1,6 @@
 ---
 import GradientText from "@/animations/gradientText/gradientText";
+import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 ---
 
 <footer class="bg-background/10 border-t border-primary pt-16 pb-8">
@@ -27,36 +28,11 @@ import GradientText from "@/animations/gradientText/gradientText";
           Creating digital experiences that blend creativity with technical
           excellence.
         </p>
-        <div class="flex gap-4 pt-2">
-          <a
-            href="#"
-            class="text-lg text-gray-400 hover:text-text transition-colors duration-300 hover:scale-110"
-          >
-            <i class="ri-github-fill"></i>
-          </a>
-          <a
-            href="#"
-            class="text-lg text-gray-400 hover:text-text transition-colors duration-300 hover:scale-110"
-          >
-            <i class="ri-linkedin-fill"></i>
-          </a>
-          <a
-            href="#"
-            class="text-lg text-gray-400 hover:text-text transition-colors duration-300 hover:scale-110"
-          >
-            <i class="ri-twitter-x-fill"></i>
-          </a>
-          <a
-            href="#"
-            class="text-lg text-gray-400 hover:text-text transition-colors duration-300 hover:scale-110"
-          >
-            <i class="ri-dribbble-line"></i>
-          </a>
-        </div>
+        <SocialLinks />
       </div>
 
       <!-- Quick Links -->
-      <div class="space-y-4 flex flex-col items-start w-1/3">
+      <div class="space-y-4">
         <GradientText
           colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
           animationSpeed={10}
