@@ -12,15 +12,6 @@
     --color-fourth: #009F93;
 }
 
-.dark {
-    --color-background: #09090b;
-    --color-text: #fff;
-    --color-primary: #02C3BD;
-    --color-secondary: #223a4e;
-    --color-tertiary: #037171;
-    --color-fourth: #009F93;
-}
-
 html {
     scrollbar-color: var(--color-primary) var(--color-background);
     scrollbar-width: thin;
@@ -34,14 +25,68 @@ body {
     overflow: hidden;
 }
 
-main {
-    flex: 1;
-}
-
 body {
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: "Onest", sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+input:-webkit-autofill {
+    background-color: transparent;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.dark {
+    --color-background: #09090b;
+    --color-text: #fff;
+    --color-primary: #02C3BD;
+    --color-secondary: #223a4e;
+    --color-tertiary: #037171;
+    --color-fourth: #009F93;
+}
+
+.particles-div {
+    mask-image: linear-gradient(to bottom, black 80%, transparent);
+}
+
+.profile-card {
+    transition: transform 0.5s ease-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.profile-img {
+    mask-image:
+        linear-gradient(to bottom, black 80%, transparent),
+        linear-gradient(to bottom right, black 70%, transparent),
+        linear-gradient(to bottom left, black 70%, transparent);
+    mask-composite: intersect;
+    -webkit-mask-composite: intersect;
+    opacity: 0.8;
+}
+
+.animate-gradient {
+    animation: gradient 8s linear infinite;
+}
+
+.animate-fadeUp {
+    opacity: 0;
+    animation: fadeUp 0.8s forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.animate-fadeIn {
+    opacity: 0;
+    animation: fadeIn 1.2s forwards;
+    animation-delay: var(--delay, 0s);
 }
 
 @keyframes gradient {
@@ -56,10 +101,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-.animate-gradient {
-    animation: gradient 8s linear infinite;
 }
 
 @keyframes fadeUp {
@@ -84,50 +125,6 @@ body {
     }
 }
 
-.animate-fadeUp {
-    opacity: 0;
-    animation: fadeUp 0.8s forwards;
-    animation-delay: var(--delay, 0s);
-}
-
-.animate-fadeIn {
-    opacity: 0;
-    animation: fadeIn 1.2s forwards;
-    animation-delay: var(--delay, 0s);
-}
-
-.profile-card {
-    transition: transform 0.5s ease-out;
-}
-
-.profile-card:hover {
-    transform: translateY(-5px) scale(1.02);
-}
-
-.particles-div {
-    mask-image:
-        linear-gradient(to bottom,
-            black 80%,
-            transparent)
-}
-
-.profile-img {
-    mask-image:
-        linear-gradient(to bottom,
-            black 80%,
-            transparent),
-        linear-gradient(to bottom right,
-            black 70%,
-            transparent),
-        linear-gradient(to bottom left,
-            black 70%,
-            transparent);
-    mask-composite: intersect;
-    -webkit-mask-composite: intersect;
-    opacity: 0.8;
-}
-
-/* Custom scrollbar styles */
 ::-webkit-scrollbar {
     width: 10px;
     background: var(--color-bg);

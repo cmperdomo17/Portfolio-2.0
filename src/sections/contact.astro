@@ -100,7 +100,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
                 <input
                   type="text"
                   id="name"
-                  class="w-full bg-background/20 border border-primary rounded-full py-2 px-10 text-text focus:outline-none focus:border-white transition-colors"
+                  class="w-full bg-background/20 border border-primary rounded-full py-2 px-10 text-text focus:outline-none focus:border-white transition-colors autofill:bg-transparent"
                   placeholder="Your name"
                 />
               </div>
@@ -115,7 +115,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
                 <input
                   type="email"
                   id="email"
-                  class="w-full bg-background/20 border border-primary rounded-full py-3 px-10 text-text focus:outline-none focus:border-white transition-colors"
+                  class="w-full bg-background/20 border border-primary rounded-full py-2 px-10 text-text focus:outline-none focus:border-white transition-colors"
                   placeholder="Your email"
                 />
               </div>
@@ -131,7 +131,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <input
                 type="text"
                 id="subject"
-                class="w-full bg-background/20 border border-primary rounded-full py-3 px-10 text-text focus:outline-none focus:border-white transition-colors"
+                class="w-full bg-background/20 border border-primary rounded-full py-3 px-10 text-text focus:outline-none focus:border-white transition-colors autofill:bg-transparent"
                 placeholder="Subject"
               />
             </div>
@@ -144,7 +144,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <textarea
                 id="message"
                 rows="5"
-                class="w-full bg-background/20 border border-primary rounded-2xl py-3 px-10 text-text focus:outline-none focus:border-white transition-colors"
+                class="w-full bg-background/20 border border-primary rounded-2xl py-3 px-10 text-text transition-colors"
                 placeholder="Your message"></textarea>
             </div>
           </div>
@@ -228,26 +228,6 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
             }
           }, 5000);
         }, 1500);
-      });
-
-      // Input Focus Animation
-      const formInputs = document.querySelectorAll("input, textarea");
-
-      formInputs.forEach((input) => {
-        // Add focus effect
-        input.addEventListener("focus", () => {
-          if (input.parentElement) {
-            input.parentElement.classList.add("ring-2", "ring-primary-500/50");
-          }
-        });
-        input.addEventListener("blur", () => {
-          if (input.parentElement) {
-            input.parentElement.classList.remove(
-              "ring-2",
-              "ring-primary-500/50"
-            );
-          }
-        });
       });
 
       // Contact Section Particles
