@@ -1,5 +1,6 @@
 ---
 import GradientText from "@/animations/gradientText/gradientText";
+import CardImage from "@/components/cardImage/cardImage.astro";
 
 ---
 
@@ -19,7 +20,7 @@ import GradientText from "@/animations/gradientText/gradientText";
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid md:grid-cols-2 items-center">
       <!-- About Image -->
       <div
         class="relative max-w-md mx-auto md:mx-0 animate-fadeIn"
@@ -28,36 +29,8 @@ import GradientText from "@/animations/gradientText/gradientText";
         <!-- Background Gradient Blob -->
         <div class="hero-gradients absolute inset-0 rounded-4xl"></div>
 
-        <!-- Image Container -->
-        <div
-          class="profile-card relative z-10 border-3 border-primary/70 p-4 rounded-[50px] bg-background/20 backdrop-blur-xl hover:border-primary transition-all duration-500 shadow-2xl shadow-primary/50"
-        >
-          <img
-            src="/images/profile.png"
-            alt="Professional Photo"
-            class="w-full h-auto relative profile-img rounded-[40px]"
-          />
-
-          <!-- Corner Borders -->
-          <div
-            class="absolute top-4 right-4 w-20 h-20 border-t-3 border-r-3 border-primary rounded-tr-4xl"
-          >
-          </div>
-          <div
-            class="absolute bottom-4 left-4 w-20 h-20 border-b-3 border-l-3 border-primary rounded-bl-4xl"
-          >
-          </div>
-
-          <!-- Experience Badge -->
-          <div
-            class="absolute -bottom-6 -right-6 bg-background/70 rounded-2xl p-4 shadow-lg border border-primary"
-          >
-            <div class="text-center">
-              <span class="text-3xl font-bold text-primary">3+</span>
-              <p class="text-gray-300 text-sm">Years of Experience</p>
-            </div>
-          </div>
-        </div>
+        <!-- Image -->
+        <CardImage />
       </div>
 
       <!-- About Content -->
