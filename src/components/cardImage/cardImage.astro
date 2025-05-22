@@ -1,8 +1,12 @@
 ---
+export interface Props {
+  className?: string;
+}
+const { className = "" } = Astro.props;
 ---
 
 <div
-  class="relative max-w-md mx-auto md:ml-auto animate-fadeIn"
+  class={`relative max-w-md mx-auto md:ml-auto animate-fadeIn ${className}`}
   style="--delay: 0.5s"
 >
   <div class="hero-gradients absolute inset-0 rounded-full"></div>
