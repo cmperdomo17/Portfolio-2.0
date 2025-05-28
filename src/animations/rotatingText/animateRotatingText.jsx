@@ -1,6 +1,6 @@
 import { motion, LayoutGroup } from "framer-motion";
 import RotatingText from "@/animations/rotatingText/rotatingText";
-import AnimatedSplitText from "@/animations/splitText/gsap/animatedSplitText";
+import AnimatedSplitText from "@/animations/splitText/animatedSplitText";
 
 export default function AnimateRotatingText({
     staticText = "Engineering",
