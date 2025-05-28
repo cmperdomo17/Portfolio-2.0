@@ -2,6 +2,7 @@
 import GradientText from "@/animations/gradientText/gradientText";
 import Hamburger from "@/components/hamburguer/hamburger.astro";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
+import "@/styles/navbar.css";
 ---
 
 <nav
@@ -34,7 +35,6 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 <!-- Curved Navigation Menu -->
 <div id="curved-menu" class="menu-overlay">
   <div class="menu-container">
-
     <div class="menu-body">
       <div class="menu-nav">
         <div id="nav-links" class="nav-links"></div>
@@ -42,7 +42,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 
       <div class="menu-footer">
         <SocialLinks />
-        <div class="">
+        <div class="flex items-center gap-2 justify-center">
           <i class="ti ti-world"></i>
           <span>Language</span>
         </div>
@@ -51,5 +51,194 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
   </div>
 </div>
 
-<link rel="stylesheet" href="/styles/navbar.css" />
-<script src="/animations/navbar/animated-menu.js"></script>
+<script>
+  // Inline JavaScript para asegurar carga en producción
+  class Menu {
+    // Declarar propiedades de la clase
+    navItems: Array<{title: string, href: string}>;
+    isMenuOpen: boolean;
+    selectedIndicator: string;
+    menuBtn: HTMLElement | null;
+    menu: HTMLElement | null;
+    hamburgerInput: HTMLInputElement | null;
+    navLinksContainer: HTMLElement | null;
+
+    constructor() {
+      this.navItems = [
+        { title: "Home", href: "#hero" },
+        { title: "About", href: "#about" },
+        { title: "Projects", href: "#projects" },
+        { title: "Experience", href: "#experience" },
+        { title: "Contact", href: "#contact" },
+      ];
+
+      this.isMenuOpen = false;
+      this.selectedIndicator = window.location.hash || "#hero";
+      this.menuBtn = null;
+      this.menu = null;
+      this.hamburgerInput = null;
+      this.navLinksContainer = null;
+
+      this.initElements();
+      this.createNavLinks();
+      this.bindEvents();
+    }
+
+    initElements(): void {
+      this.menuBtn = document.getElementById("menu-btn");
+      this.menu = document.getElementById("curved-menu");
+      this.hamburgerInput = document.querySelector(".hamburger input");
+      this.navLinksContainer = document.getElementById("nav-links");
+    }
+
+    createNavLinks(): void {
+      if (!this.navLinksContainer) return;
+
+      this.navLinksContainer.innerHTML = "";
+
+      this.navItems.forEach((item, index) => {
+        const linkWrapper = document.createElement("div");
+        linkWrapper.className = "nav-link-wrapper";
+        linkWrapper.setAttribute("data-index", index.toString());
+
+        const link = document.createElement("a");
+        link.href = item.href;
+        link.className = `nav-link ${this.selectedIndicator === item.href ? "active" : ""}`;
+        link.textContent = item.title;
+
+        this.addLinkEvents(linkWrapper, link, item);
+
+        linkWrapper.appendChild(link);
+        this.navLinksContainer!.appendChild(linkWrapper);
+      });
+    }
+
+    addLinkEvents(wrapper: HTMLElement, link: HTMLElement, item: {title: string, href: string}): void {
+      wrapper.addEventListener("mouseenter", () => {
+        this.setSelectedIndicator(item.href);
+      });
+
+      wrapper.addEventListener("mouseleave", () => {
+        this.setSelectedIndicator(window.location.hash || "#hero");
+      });
+
+      link.addEventListener("click", (e: Event) => {
+        e.preventDefault();
+        this.navigateToSection(item.href);
+        this.closeMenu();
+      });
+    }
+
+    navigateToSection(href: string): void {
+      this.setSelectedIndicator(href);
+
+      const targetSection = document.querySelector(href);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      window.history.pushState({}, "", href);
+    }
+
+    setSelectedIndicator(href: string): void {
+      this.selectedIndicator = href;
+      this.updateIndicators();
+    }
+
+    updateIndicators(): void {
+      const links = document.querySelectorAll(".nav-link");
+
+      links.forEach((link, index) => {
+        const item = this.navItems[index];
+        if (item.href === this.selectedIndicator) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+
+    openMenu(): void {
+      this.isMenuOpen = true;
+
+      if (this.hamburgerInput) {
+        this.hamburgerInput.checked = true;
+      }
+
+      this.menu?.classList.add("active");
+      this.menu?.classList.remove("exiting");
+      document.body.style.overflow = "hidden";
+    }
+
+    closeMenu(): void {
+      this.isMenuOpen = false;
+
+      if (this.hamburgerInput) {
+        this.hamburgerInput.checked = false;
+      }
+
+      this.menu?.classList.add("exiting");
+
+      setTimeout(() => {
+        this.menu?.classList.remove("active", "exiting");
+        document.body.style.overflow = "";
+      }, 800);
+    }
+
+    toggleMenu(): void {
+      if (this.isMenuOpen) {
+        this.closeMenu();
+      } else {
+        this.openMenu();
+      }
+    }
+
+    handleScroll(): void {
+      const sections = document.querySelectorAll("section[id]") as NodeListOf<HTMLElement>;
+      let currentSection = "#hero";
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          currentSection = `#${section.id}`;
+        }
+      });
+
+      if (currentSection !== this.selectedIndicator && !this.isMenuOpen) {
+        this.setSelectedIndicator(currentSection);
+        window.history.replaceState({}, "", currentSection);
+      }
+    }
+
+    bindEvents(): void {
+      this.menuBtn?.addEventListener("click", (e: Event) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.toggleMenu();
+      });
+
+      window.addEventListener("scroll", () => this.handleScroll());
+
+      document.addEventListener("keydown", (e: KeyboardEvent) => {
+        if (e.key === "Escape" && this.isMenuOpen) {
+          this.closeMenu();
+        }
+      });
+
+      document.addEventListener("click", (e: Event) => {
+        if (
+          this.isMenuOpen &&
+          !this.menu?.contains(e.target as Node) &&
+          !this.menuBtn?.contains(e.target as Node)
+        ) {
+          this.closeMenu();
+        }
+      });
+    }
+  }
+
+  // Initialize when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    new Menu();
+  });
+</script>
