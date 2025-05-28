@@ -114,6 +114,7 @@
 .menu-footer {
     display: flex;
     width: 100%;
+    align-items: center;
     justify-content: space-between;
     font-size: 16px;
     transform: translateX(80px);
