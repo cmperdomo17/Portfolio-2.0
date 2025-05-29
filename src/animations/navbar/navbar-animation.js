@@ -1,29 +1,29 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Registrar el plugin
+// Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Función para inicializar la animación del navbar
+// Initialize the animation for the navbar visibility on scroll
 function initNavbarAnimation() {
-    // Crea la animación del navbar
-    const showNavAnim = gsap.from('#navbar', {
+    // Define the animation to show the navbar (initially paused)
+    const showNavAnim = gsap.from("#navbar", {
         yPercent: -100,
         paused: true,
         duration: 0.1,
     }).progress(1);
 
-    // Crea el ScrollTrigger
+    // Create the scroll trigger to toggle the navbar visibility
     ScrollTrigger.create({
         trigger: "body",
         start: "top top",
-        end: 99999,
+        end: 99999, // Run throughout the entire page
         onUpdate: (self) => {
-            // Si el scroll va hacia arriba, mostrar navbar
-            // Si va hacia abajo, ocultar navbar
+            // Show navbar when scrolling up, hide when scrolling down
             self.direction === -1 ? showNavAnim.play() : showNavAnim.reverse();
-        }
+        },
     });
 }
 
-document.addEventListener('DOMContentLoaded', initNavbarAnimation);
+// Initialize animation once the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", initNavbarAnimation);

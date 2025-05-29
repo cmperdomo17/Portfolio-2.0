@@ -5,41 +5,45 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 import "@/styles/navbar.css";
 ---
 
+<!-- Navbar -->
 <nav
   id="navbar"
-  class="fixed bg-background w-full top-0 left-0 z-[5] transition-all duration-300 py-2 px-6 md:px-12"
+  class="fixed top-0 left-0 w-full bg-background z-[5] py-2 px-6 md:px-12 transition-all duration-300"
 >
   <div class="container mx-auto">
-    <div class="flex justify-between items-center">
+    <div class="flex items-center justify-between">
       <!-- Logo -->
       <a
         href="#hero"
-        class="text-2xl font-black text-gradient flex items-center gap-2"
+        class="flex items-center gap-2 text-2xl font-black text-gradient"
       >
         <GradientText
           colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
           animationSpeed={10}
           showBorder={false}
-          className=""
           client:load
         >
           <i class="ri-code-s-slash-line"></i>
           mario.dev
         </GradientText>
       </a>
-      <Hamburger />
     </div>
   </div>
 </nav>
 
-<!-- Curved Navigation Menu -->
-<div id="curved-menu" class="menu-overlay">
+<!-- Hamburger Menu Button -->
+<Hamburger />
+
+<!-- Menú Overlay -->
+<div id="menu" class="menu-overlay">
   <div class="menu-container">
     <div class="menu-body">
+      <!-- Menu Navigation -->
       <div class="menu-nav">
         <div id="nav-links" class="nav-links"></div>
       </div>
 
+      <!-- Menu Footer -->
       <div class="menu-footer">
         <SocialLinks />
         <div class="flex items-center gap-2 justify-center">
@@ -51,4 +55,5 @@ import "@/styles/navbar.css";
   </div>
 </div>
 
+<!-- Animation Script -->
 <script src="/src/animations/navbar/menu-animated.js"></script>
