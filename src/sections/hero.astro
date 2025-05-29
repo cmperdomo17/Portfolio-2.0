@@ -3,11 +3,17 @@ import AnimatedSplitText from "@/animations/splitText/animatedSplitText";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 import CardImage from "@/components/cardImage/cardImage.astro";
 import AnimateRotatingText from "@/animations/rotatingText/animateRotatingText";
+
+import { useTranslations } from "@/i18n/utils";
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(currentLang as 'en' | 'es');
 ---
 
 <section id="hero" class="min-h-screen pt-24 pb-16 flex items-center relative">
   <div class="container mx-auto px-4 md:px-8">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid md:grid-cols-[55%_45%]">
       <!-- Hero Content -->
       <div class="space-y-7 reveal-content">
         <div
@@ -21,7 +27,7 @@ import AnimateRotatingText from "@/animations/rotatingText/animateRotatingText";
               <span class="size-[10px] rounded-full bg-primary animate-pulse"
               ></span>
               <AnimatedSplitText
-                text="Available for Freelance Projects"
+                text={translateLabels("hero.availability")}
                 className="text-text/80 text-sm font-semibold"
                 client:load
                 x={0}
@@ -36,7 +42,7 @@ import AnimateRotatingText from "@/animations/rotatingText/animateRotatingText";
         <div class="flex flex-col gap-6 pt-2">
           <div class="flex animate-fadeUp" style="--delay: 0.4s">
             <AnimatedSplitText
-              text="Hi, I'm Mario Perdomo"
+              text={translateLabels("hero.greeting")}
               className="text-5xl lg:text-6xl font-extrabold text-center md:text-start"
               highlightText="Mario Perdomo"
               client:load
@@ -47,11 +53,15 @@ import AnimateRotatingText from "@/animations/rotatingText/animateRotatingText";
             />
           </div>
 
-          <AnimateRotatingText client:load />
+          <AnimateRotatingText
+            staticText={translateLabels("hero.rotatingText.rotatingTexts")}
+            rotatingTexts={translateLabels("hero.rotatingText.dynamicText")}
+            client:load
+          />
 
           <div class="animate-fadeUp" style="--delay: 0.8s">
             <AnimatedSplitText
-              text="I craft digital experiences that blend creativity with technical excellence. Specializing in creating modern, responsive, and user-friendly web applications."
+              text={translateLabels("hero.description")}
               className="text-text/80 text-lg max-w-lg text-center md:text-start"
               client:load
               x={0}
@@ -70,21 +80,23 @@ import AnimateRotatingText from "@/animations/rotatingText/animateRotatingText";
             href="#projects"
             class="bg-gradient-to-r from-primary/10 to-primary/30 border border-primary text-text py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium"
           >
-            <i class="ri-eye-line"></i> View My Work
+            <i class="ri-eye-line"></i>
+              {translateLabels("hero.viewProjects")}
           </a>
 
           <a
             href="#contact"
             class="border border-primary text-text py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-sm"
           >
-            <i class="ri-chat-1-line"></i> Contact Me
+            <i class="ri-chat-1-line"></i>
+            {translateLabels("hero.contactMe")}
           </a>
         </div>
         <SocialLinks />
       </div>
 
       <!-- Hero Image -->
-      <CardImage className="hidden md:block" />
+      <CardImage className="hidden md:block mx-auto" />
     </div>
   </div>
 

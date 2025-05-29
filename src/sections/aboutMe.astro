@@ -1,6 +1,11 @@
 ---
 import GradientText from "@/animations/gradientText/gradientText";
 import CardImage from "@/components/cardImage/cardImage.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(currentLang as 'en' | 'es');
 ---
 
 <section id="about" class="py-24">
@@ -8,13 +13,14 @@ import CardImage from "@/components/cardImage/cardImage.astro";
     <div class="flex flex-col items-center mb-16">
       <span class="text-primary font-medium mb-4 flex items-center gap-2">
         <div class="w-8 h-0.5 bg-primary"></div>
-        ABOUT ME
+        {translateLabels("about.title")}
         <div class="w-8 h-0.5 bg-primary"></div>
       </span>
       <h2
         class="text-5xl font-extrabold bg-gradient-to-r from-primary to-text text-transparent bg-clip-text text-center"
       >
-        Get to Know <span class="text-gradient">Who I Am</span>
+        {translateLabels("about.headline")}{" "}
+        <span class="text-gradient">{translateLabels("about.highlight")}</span>
       </h2>
     </div>
 
@@ -40,15 +46,15 @@ import CardImage from "@/components/cardImage/cardImage.astro";
           className="font-semibold text-2xl mb-4"
           client:load
         >
-          Full-Stack Developer with a Frontend Focus
+          {translateLabels("about.role")}
         </GradientText>
 
         <p class="text-gray-300">
-          I'm a passionate web developer with 3 years of experience, focused on creating modern, user-centered interfaces that truly make an impact. I combine technical expertise with a strong eye for design to craft digital products that are not only functional, but also memorable and engaging.
+          {translateLabels("about.paragraph1")}
         </p>
 
         <p class="text-gray-300">
-          Over my career, I've built scalable and maintainable solutions using technologies like Next.js, React, and Tailwind CSS. I care deeply about code quality, frontend performance, and delivering intuitive user experiences. I always approach projects with a product-driven mindset, collaborating closely with teams to turn ideas into real, high-impact solutions.
+          {translateLabels("about.paragraph2")}
         </p>
 
         <div class="pt-4">
@@ -59,7 +65,7 @@ import CardImage from "@/components/cardImage/cardImage.astro";
             className="font-bold text-xl mb-4"
             client:load
           >
-            My Tech Stack
+            {translateLabels("about.techStack")}
           </GradientText>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div
@@ -123,19 +129,27 @@ import CardImage from "@/components/cardImage/cardImage.astro";
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
           <div class="flex items-center gap-3">
             <i class="ri-calendar-line text-primary"></i>
-            <span><strong>Born:</strong> 27 Nov 2002</span>
+            <span
+              ><strong>{translateLabels("about.birth")}:</strong> 27 Nov 2002</span
+            >
           </div>
           <div class="flex items-center gap-3">
             <i class="ri-map-pin-line text-primary"></i>
-            <span><strong>Location:</strong> Pitalito, Huila</span>
+            <span
+              ><strong>{translateLabels("about.location")}:</strong> Pitalito, Huila</span
+            >
           </div>
           <div class="flex items-center gap-3">
             <i class="ri-mail-line text-primary"></i>
-            <span><strong>Email:</strong> cmperdomo7@gmail.com</span>
+            <span
+              ><strong>{translateLabels("about.email")}:</strong> cmperdomo7@gmail.com</span
+            >
           </div>
           <div class="flex items-center gap-3">
             <i class="ri-translate-2 text-primary"></i>
-            <span><strong>Languages:</strong> English, Spanish</span>
+            <span
+              ><strong>{translateLabels("about.languages")}:</strong> English, Spanish</span
+            >
           </div>
         </div>
 
@@ -148,7 +162,7 @@ import CardImage from "@/components/cardImage/cardImage.astro";
             class="inline-flex items-center gap-2 bg-transparent border border-primary hover:bg-primary hover:text-background text-text font-semibold py-3 px-6 rounded-full transition-all duration-300"
           >
             <i class="ti ti-file-cv"></i>
-            View Resume
+            {translateLabels("about.resume")}
           </a>
         </div>
       </div>

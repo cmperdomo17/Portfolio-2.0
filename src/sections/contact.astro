@@ -1,5 +1,9 @@
 ---
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const currentLang = Astro.currentLocale || "en";
+const translateLabels = useTranslations(currentLang as "en" | "es");
 ---
 
 <section id="contact" class="py-20 relative overflow-hidden">
@@ -21,11 +25,10 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
       <h2
         class="text-5xl font-extrabold bg-gradient-to-r from-primary to-white text-transparent bg-clip-text mb-4"
       >
-        Get In <span class="text-gradient">Touch</span>
+        {translateLabels("contact.title")}
       </h2>
       <p class="text-text/80 max-w-2xl mx-auto">
-        Have a project in mind or want to collaborate? Feel free to reach out
-        using the form below or through my social media channels.
+        {translateLabels("contact.description")}
       </p>
     </div>
 
@@ -35,7 +38,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
         class="md:col-span-2 bg-background/20 backdrop-blur-sm p-6 rounded-2xl border border-primary"
       >
         <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
-          <i class="ri-contacts-book-line text-primary"></i> Contact Information
+          <i class="ri-contacts-book-line text-primary"></i>
+          {translateLabels("contact.infoTitle")}
         </h3>
 
         <div class="space-y-6">
@@ -44,12 +48,15 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <i class="ri-mail-line text-xl text-primary"></i>
             </div>
             <div>
-              <h4 class="text-lg font-medium text-primary">Email</h4>
+              <h4 class="text-lg text-primary font-bold">
+                {translateLabels("contact.emailTitle")}
+              </h4>
               <a
-                href="cmperdomo7@gmail.com"
+                href="mailto:cmperdomo7@gmail.com"
                 class="text-text hover:text-primary transition-colors duration-500"
-                >cmperdomo7@gmail.com</a
               >
+                cmperdomo7@gmail.com
+              </a>
             </div>
           </div>
 
@@ -58,8 +65,10 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <i class="ri-map-pin-line text-xl text-primary"></i>
             </div>
             <div>
-              <h4 class="text-lg font-medium text-primary">Location</h4>
-              <p class="text-text">Pitalito - Huila</p>
+              <h4 class="text-lg text-primary font-bold">
+                {translateLabels("contact.locationTitle")}
+              </h4>
+              <p class="text-text">{translateLabels("contact.location")}</p>
             </div>
           </div>
 
@@ -68,15 +77,19 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               <i class="ri-time-line text-xl text-primary"></i>
             </div>
             <div>
-              <h4 class="text-lg font-medium text-primary">Availability</h4>
-              <p class="text-text">Mon-Fri, 9AM-6PM PST</p>
+              <h4 class="text-lg text-primary font-bold">
+                {translateLabels("contact.availabilityTitle")}
+              </h4>
+              <p class="text-text">{translateLabels("contact.availability")}</p>
             </div>
           </div>
         </div>
 
         <!-- Social Media Links -->
         <div class="mt-8">
-          <h4 class="text-lg font-medium mb-2">Connect With Me</h4>
+          <h4 class="text-lg font-medium mb-2">
+            {translateLabels("contact.socialTitle")}
+          </h4>
           <SocialLinks />
         </div>
       </div>
@@ -86,13 +99,16 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
         class="md:col-span-3 bg-background/20 backdrop-blur-sm p-6 rounded-2xl border border-primary"
       >
         <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
-          <i class="ri-send-plane-line text-primary"></i> Send Me a Message
+          <i class="ri-send-plane-line text-primary"></i>
+          {translateLabels("contact.formTitle")}
         </h3>
 
         <form id="contact-form" class="space-y-6">
           <div class="grid md:grid-cols-2 gap-4">
             <div class="form-group">
-              <label for="name" class="block text-primary mb-2">Name</label>
+              <label for="name" class="block text-primary mb-2">
+                {translateLabels("contact.formName")}
+              </label>
               <div class="relative">
                 <i
                   class="ri-user-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -101,13 +117,15 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
                   type="text"
                   id="name"
                   class="w-full bg-background/20 border border-primary rounded-full py-2 px-10 text-text focus:outline-none focus:border-white transition-colors autofill:bg-transparent"
-                  placeholder="Your name"
+                  placeholder={Array.isArray(translateLabels("contact.formNamePlaceholder")) ? translateLabels("contact.formNamePlaceholder")[0] : translateLabels("contact.formNamePlaceholder") as string}
                 />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="email" class="block text-primary mb-2">Email</label>
+              <label for="email" class="block text-primary mb-2">
+                {translateLabels("contact.formEmail")}
+              </label>
               <div class="relative">
                 <i
                   class="ri-mail-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -116,14 +134,16 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
                   type="email"
                   id="email"
                   class="w-full bg-background/20 border border-primary rounded-full py-2 px-10 text-text focus:outline-none focus:border-white transition-colors"
-                  placeholder="Your email"
+                  placeholder={Array.isArray(translateLabels("contact.formEmailPlaceholder")) ? translateLabels("contact.formEmailPlaceholder")[0] : translateLabels("contact.formEmailPlaceholder") as string}
                 />
               </div>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="subject" class="block text-primary mb-2">Subject</label>
+            <label for="subject" class="block text-primary mb-2">
+              {translateLabels("contact.formSubject")}
+            </label>
             <div class="relative">
               <i
                 class="ri-bookmark-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -132,20 +152,23 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
                 type="text"
                 id="subject"
                 class="w-full bg-background/20 border border-primary rounded-full py-3 px-10 text-text focus:outline-none focus:border-white transition-colors autofill:bg-transparent"
-                placeholder="Subject"
+                placeholder={Array.isArray(translateLabels("contact.formSubjectPlaceholder")) ? translateLabels("contact.formSubjectPlaceholder")[0] : translateLabels("contact.formSubjectPlaceholder") as string}
               />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="message" class="block text-primary mb-2">Message</label>
+            <label for="message" class="block text-primary mb-2">
+              {translateLabels("contact.formMessage")}
+            </label>
             <div class="relative">
               <i class="ri-chat-1-line absolute left-3 top-3 text-gray-400"></i>
               <textarea
                 id="message"
                 rows="5"
                 class="w-full bg-background/20 border border-primary rounded-2xl py-3 px-10 text-text transition-colors"
-                placeholder="Your message"></textarea>
+                placeholder={Array.isArray(translateLabels("contact.formMessagePlaceholder")) ? translateLabels("contact.formMessagePlaceholder")[0] : translateLabels("contact.formMessagePlaceholder") as string}
+              ></textarea>
             </div>
           </div>
 
@@ -155,9 +178,9 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               id="consent"
               class="accent-primary w-4 h-4 rounded-full"
             />
-            <label for="consent"
-              >I agree to the privacy policy and terms of service</label
-            >
+            <label for="consent">
+              {translateLabels("contact.formConsent")}
+            </label>
           </div>
 
           <button
@@ -165,7 +188,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
             class="w-full bg-background/20 hover:bg-primary border border-primary text-primary hover:text-background py-3 px-6 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-medium"
           >
             <i class="ri-send-plane-fill"></i>
-            Send Message
+            {translateLabels("contact.formSubmit")}
             <span class="send-icon-wrapper"></span>
           </button>
         </form>
@@ -176,92 +199,91 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           class="hidden bg-green-600/20 border border-green-500/30 text-green-400 p-4 rounded-lg mt-6 items-center gap-3"
         >
           <i class="ri-checkbox-circle-line text-xl"></i>
-          <p>
-            Your message has been sent successfully! I'll get back to you soon.
-          </p>
+          <p>{translateLabels("contact.formSuccess")}</p>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <script>
-    // Contact Form Submission
-    const contactForm = document.getElementById(
-      "contact-form"
-    ) as HTMLFormElement | null;
-    const formSuccess = document.getElementById("form-success");
+<script>
+  // Contact Form Submission
+  const contactForm = document.getElementById(
+    "contact-form"
+  ) as HTMLFormElement | null;
+  const formSuccess = document.getElementById("form-success");
 
-    if (contactForm) {
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-        // Simulate form submission
-        const submitButton = contactForm.querySelector(
-          'button[type="submit"]'
-        ) as HTMLButtonElement | null;
-        if (!submitButton) return;
-        const originalText = submitButton.innerHTML;
+      // Simulate form submission
+      const submitButton = contactForm.querySelector(
+        'button[type="submit"]'
+      ) as HTMLButtonElement | null;
+      if (!submitButton) return;
+      const originalText = submitButton.innerHTML;
 
-        // Change button text and disable
-        submitButton.innerHTML =
-          '<i class="ri-loader-4-line animate-spin"></i> Sending...';
-        submitButton.disabled = true;
+      // Change button text and disable
+      submitButton.innerHTML =
+        '<i class="ri-loader-4-line animate-spin"></i> Sending...';
+      submitButton.disabled = true;
 
-        // Simulate API call
+      // Simulate API call
+      setTimeout(() => {
+        // Reset form
+        contactForm.reset();
+
+        // Show success message
+        if (formSuccess) {
+          formSuccess.classList.remove("hidden");
+        }
+
+        // Reset button
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+
+        // Hide success message after 5 seconds
         setTimeout(() => {
-          // Reset form
-          contactForm.reset();
-
-          // Show success message
           if (formSuccess) {
-            formSuccess.classList.remove("hidden");
+            formSuccess.classList.add("hidden");
           }
+        }, 5000);
+      }, 1500);
+    });
 
-          // Reset button
-          submitButton.innerHTML = originalText;
-          submitButton.disabled = false;
+    // Contact Section Particles
+    function createContactParticles() {
+      const container = document.getElementById("contact-particles");
+      const particleCount = window.innerWidth > 768 ? 10 : 5;
 
-          // Hide success message after 5 seconds
-          setTimeout(() => {
-            if (formSuccess) {
-              formSuccess.classList.add("hidden");
-            }
-          }, 5000);
-        }, 1500);
-      });
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
 
-      // Contact Section Particles
-      function createContactParticles() {
-        const container = document.getElementById("contact-particles");
-        const particleCount = window.innerWidth > 768 ? 10 : 5;
+        const size = Math.random() * 8 + 3;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const opacity = Math.random() * 0.3 + 0.05;
+        const duration = Math.random() * 15 + 10;
+        const delay = Math.random() * 5;
 
-        for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement("div");
-          particle.classList.add("particle");
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.opacity = opacity.toString();
+        particle.style.animation = `floatContact ${duration}s ease-in-out ${delay}s infinite alternate`;
 
-          const size = Math.random() * 8 + 3;
-          const posX = Math.random() * 100;
-          const posY = Math.random() * 100;
-          const opacity = Math.random() * 0.3 + 0.05;
-          const duration = Math.random() * 15 + 10;
-          const delay = Math.random() * 5;
-
-          particle.style.width = `${size}px`;
-          particle.style.height = `${size}px`;
-          particle.style.left = `${posX}%`;
-          particle.style.top = `${posY}%`;
-          particle.style.opacity = opacity.toString();
-          particle.style.animation = `floatContact ${duration}s ease-in-out ${delay}s infinite alternate`;
-
-          if (container) {
-            container.appendChild(particle);
-          }
+        if (container) {
+          container.appendChild(particle);
         }
       }
+    }
 
-      // Add CSS animation for contact particles
-      const contactStyleElement = document.createElement("style");
-      contactStyleElement.textContent = `
+    // Add CSS animation for contact particles
+    const contactStyleElement = document.createElement("style");
+    contactStyleElement.textContent = `
             @keyframes floatContact {
                 0% {
                     transform: translate(0, 0) rotate(0deg);
@@ -271,36 +293,35 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
                 }
             }
         `;
-      document.head.appendChild(contactStyleElement);
+    document.head.appendChild(contactStyleElement);
 
-      // Create particles on load
-      if (document.readyState === "complete") {
-        createContactParticles();
-      } else {
-        window.addEventListener("load", createContactParticles);
-      }
-
-      // Observe contact section elements
-      const contactElements = document.querySelectorAll(
-        "#contact .form-group, #contact h3, #contact .flex"
-      );
-
-      // Example IntersectionObserver to animate elements on enter
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate-fade-in");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      contactElements.forEach((element) => {
-        observer.observe(element);
-      });
+    // Create particles on load
+    if (document.readyState === "complete") {
+      createContactParticles();
+    } else {
+      window.addEventListener("load", createContactParticles);
     }
-  </script>
-</section>
+
+    // Observe contact section elements
+    const contactElements = document.querySelectorAll(
+      "#contact .form-group, #contact h3, #contact .flex"
+    );
+
+    // Example IntersectionObserver to animate elements on enter
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    contactElements.forEach((element) => {
+      observer.observe(element);
+    });
+  }
+</script>

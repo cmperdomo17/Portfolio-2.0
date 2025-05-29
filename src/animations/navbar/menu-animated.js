@@ -1,13 +1,15 @@
+import { useTranslations } from "@/i18n/utils";
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+    currentLang || "en",
+);
+
 class Menu {
-    constructor() {
-        // Define navigation items and initial state
-        this.navItems = [
-            { title: "Home", href: "#hero" },
-            { title: "About", href: "#about" },
-            { title: "Projects", href: "#projects" },
-            { title: "Experience", href: "#experience" },
-            { title: "Contact", href: "#contact" }
-        ];
+    constructor(navItems = []) {
+        // Use provided navItems or fallback to default
+        this.navItems = navItems;
 
         this.isMenuOpen = false;
         this.selectedIndicator = window.location.hash || "#hero";
@@ -61,7 +63,16 @@ class Menu {
 
         link.addEventListener("click", (e) => {
             e.preventDefault();
-            this.navigateToSection(item.href);
+
+            // Verificar si es un enlace externo
+            if (item.external) {
+                // Abrir en nueva pestaña
+                window.open(item.href, '_blank', 'noopener,noreferrer');
+            } else {
+                // Navegación normal a sección
+                this.navigateToSection(item.href);
+            }
+
             this.closeMenu();
         });
     }
@@ -107,7 +118,7 @@ class Menu {
 
     // Close the hamburger menu
     closeMenu() {
-        if (this.isAnimating) return; // evita múltiples cierres
+        if (this.isAnimating) return;
 
         this.isMenuOpen = false;
         this.isAnimating = true;
@@ -177,7 +188,9 @@ class Menu {
 
 // Initialize menu when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-    new Menu();
+    // Usar navItems desde window.menuData si está disponible
+    const navItems = window.menuData?.navItems || [];
+    new Menu(navItems);
 });
 
 // Export for CommonJS environments

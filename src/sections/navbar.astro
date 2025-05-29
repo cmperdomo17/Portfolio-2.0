@@ -3,6 +3,27 @@ import GradientText from "@/animations/gradientText/gradientText";
 import Hamburger from "@/components/hamburguer/hamburger.astro";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
 import "@/styles/navbar.css";
+
+import { useTranslations } from "@/i18n/utils";
+import { languageList } from "@/i18n/ui";
+
+const currentLang = Astro.currentLocale || "en";
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList
+);
+
+const navItems = [
+  { title: translateLabels("nav.hero"), href: "#hero" },
+  { title: translateLabels("nav.about"), href: "#about" },
+  { title: translateLabels("nav.projects"), href: "#projects" },
+  { title: translateLabels("nav.experience"), href: "#experience" },
+  { title: translateLabels("nav.contact"), href: "#contact" },
+  {
+    title: translateLabels("nav.resume"),
+    href: "https://res.cloudinary.com/ddfabfatl/image/upload/v1747789372/CV_English_ry76dl.pdf",
+    external: true,
+  },
+];
 ---
 
 <!-- Navbar -->
@@ -46,9 +67,28 @@ import "@/styles/navbar.css";
       <!-- Menu Footer -->
       <div class="menu-footer">
         <!-- Language selector -->
-        <div id="language-selector" class="language-selector font-bold text-base md:text-lg">
+        <div class="language-selector font-bold text-base md:text-lg">
           <i class="ti ti-world"></i>
-          <span id="language-text">English</span>
+          <select
+            class=""
+            id="language-select"
+            class=""
+            onchange="window.location.href =
+            this.value"
+            onfocus="document.getElementById('language-selector').classList.add('open')"
+          >
+            {
+              Object.entries(languageList).map(
+                ([key, label]: [string, string]) => (
+                  <option value={`/${key}`} selected={key === currentLang}>
+                    {label}
+                  </option>
+                )
+              )
+            }
+          </select>
+          <i class="ti ti-chevron-down absolute right-2 pointer-events-none"
+          ></i>
         </div>
 
         <!-- Social Links -->
@@ -58,6 +98,10 @@ import "@/styles/navbar.css";
   </div>
 </div>
 
+<!-- navItems and currentLang for JavaScript -->
+<script define:vars={{ navItems, currentLang }}>
+  window.menuData = { navItems, currentLang };
+</script>
+
 <!-- Animation Script -->
 <script src="/src/animations/navbar/menu-animated.js"></script>
-<script src="/src/components/language/language.js"></script>

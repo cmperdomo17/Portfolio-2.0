@@ -3,17 +3,8 @@ import RotatingText from "@/animations/rotatingText/rotatingText";
 import AnimatedSplitText from "@/animations/splitText/animatedSplitText";
 
 export default function AnimateRotatingText({
-    staticText = "Engineering",
-
-    rotatingTexts = [
-        "Apps",
-        "UX",
-        "Interfaces",
-        "Websites",
-        "Solutions",
-        "Experiences",
-    ]
-
+    staticText,
+    rotatingTexts
 }) {
     return (
         <div className="text-2xl md:text-3xl leading-8 flex flex-row items-center justify-center md:justify-start font-light overflow-hidden text-white animate-fadeUp" style={{ "--delay": "0.7s" }}>

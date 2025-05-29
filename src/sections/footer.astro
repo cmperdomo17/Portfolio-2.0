@@ -1,6 +1,10 @@
 ---
 import GradientText from "@/animations/gradientText/gradientText";
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const currentLang = Astro.currentLocale || "en";
+const translateLabels = useTranslations(currentLang as "en" | "es");
 ---
 
 <footer class="bg-background/10 border-t border-primary pt-16 pb-8">
@@ -25,8 +29,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           </GradientText>
         </a>
         <p class="text-gray-400 max-w-xs">
-          Creating digital experiences that blend creativity with technical
-          excellence.
+          {translateLabels("footer.brandDescription")}
         </p>
         <SocialLinks />
       </div>
@@ -40,7 +43,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           className="font-bold text-lg mb-4"
           client:load
         >
-          Quick Links
+          {translateLabels("footer.quickLinksTitle")}
         </GradientText>
 
         <ul class="space-y-2">
@@ -49,7 +52,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#about"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-arrow-right-s-line"></i> About Me
+              <i class="ri-arrow-right-s-line"></i>
+              {translateLabels("footer.linkAbout")}
             </a>
           </li>
           <li>
@@ -57,7 +61,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#projects"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-arrow-right-s-line"></i> Projects
+              <i class="ri-arrow-right-s-line"></i>
+              {translateLabels("footer.linkProjects")}
             </a>
           </li>
           <li>
@@ -65,7 +70,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#experience"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-arrow-right-s-line"></i> Experience
+              <i class="ri-arrow-right-s-line"></i>
+              {translateLabels("footer.linkExperience")}
             </a>
           </li>
           <li>
@@ -73,7 +79,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#skills"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-arrow-right-s-line"></i> Skills
+              <i class="ri-arrow-right-s-line"></i>
+              {translateLabels("footer.linkSkills")}
             </a>
           </li>
           <li>
@@ -81,7 +88,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#contact"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-arrow-right-s-line"></i> Contact
+              <i class="ri-arrow-right-s-line"></i>
+              {translateLabels("footer.linkContact")}
             </a>
           </li>
         </ul>
@@ -96,7 +104,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           className="font-bold text-lg mb-4"
           client:load
         >
-          Services
+          {translateLabels("footer.servicesTitle")}
         </GradientText>
 
         <ul class="space-y-2">
@@ -105,7 +113,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-code-box-line"></i> Web Development
+              <i class="ri-code-box-line"></i>
+              {translateLabels("footer.serviceWebDevelopment")}
             </a>
           </li>
           <li>
@@ -113,7 +122,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-palette-line"></i> UI/UX Design
+              <i class="ri-palette-line"></i>
+              {translateLabels("footer.serviceUIUXDesign")}
             </a>
           </li>
           <li>
@@ -121,7 +131,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-smartphone-line"></i> Mobile Development
+              <i class="ri-smartphone-line"></i>
+              {translateLabels("footer.serviceMobileDevelopment")}
             </a>
           </li>
           <li>
@@ -129,7 +140,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-server-line"></i> Backend Solutions
+              <i class="ri-server-line"></i>
+              {translateLabels("footer.serviceBackendSolutions")}
             </a>
           </li>
           <li>
@@ -137,7 +149,8 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
               href="#"
               class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
             >
-              <i class="ri-search-line"></i> SEO Optimization
+              <i class="ri-search-line"></i>
+              {translateLabels("footer.serviceSEOOptimization")}
             </a>
           </li>
         </ul>
@@ -152,13 +165,13 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           className="font-bold text-lg mb-4"
           client:load
         >
-          Get In Touch
+          {translateLabels("footer.contactTitle")}
         </GradientText>
         <ul class="space-y-3">
           <li class="text-gray-400 flex items-center gap-3">
             <i class="ri-mail-line text-primary"></i>
             <a
-              href="mailto:hello@devportfolio.com"
+              href="mailto:cmperdomo7@gmail.com"
               class="hover:text-text transition-colors duration-300"
             >
               cmperdomo7@gmail.com
@@ -167,7 +180,7 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           <li class="text-gray-400 flex items-center gap-3">
             <i class="ri-phone-line text-primary"></i>
             <a
-              href="tel:+1234567890"
+              href="tel:+573107209419"
               class="hover:text-text transition-colors duration-300"
             >
               +57 310 720 9419
@@ -175,20 +188,20 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
           </li>
           <li class="text-gray-400 flex items-start gap-3">
             <i class="ri-map-pin-line text-primary mt-1"></i>
-            <span>Pitalito, Huila<br />Colombia</span>
+            <span>{translateLabels("footer.contactLocation")}</span>
           </li>
         </ul>
 
         <!-- Newsletter Form -->
         <div class="mt-6 space-y-3">
-          <label for="newsletter" class="text-sm text-gray-300"
-            >Stay Updated</label
-          >
+          <label for="newsletter" class="text-sm text-gray-300">
+            {translateLabels("footer.newsletterTitle")}
+          </label>
           <div class="flex mt-2">
             <input
               type="email"
               id="newsletter"
-              placeholder="Enter your email"
+              placeholder={Array.isArray(translateLabels("footer.newsletterPlaceholder")) ? translateLabels("footer.newsletterPlaceholder")[0] : translateLabels("footer.newsletterPlaceholder") as string}
               class="bg-background/20 border border-primary rounded-l-full py-2 px-4 focus:outline-none focus:border-white text-gray-300 w-full text-sm"
             />
             <button
@@ -207,27 +220,29 @@ import SocialLinks from "@/components/socialLinks/socialLinks.astro";
     <!-- Bottom Footer -->
     <div class="flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-gray-400 text-sm">
-        © <span id="current-year">
-          {new Date().getFullYear()}
-        </span> Mario Dev. All rights reserved.
+        © <span id="current-year">{new Date().getFullYear()}</span> Mario Dev.{" "}
+        {translateLabels("footer.copyright")}
       </p>
 
       <div class="flex items-center gap-6">
         <a
           href="#"
           class="text-gray-400 hover:text-text text-sm transition-colors duration-300"
-          >Privacy Policy</a
         >
+          {translateLabels("footer.privacyPolicy")}
+        </a>
         <a
           href="#"
           class="text-gray-400 hover:text-text text-sm transition-colors duration-300"
-          >Terms of Service</a
         >
+          {translateLabels("footer.termsOfService")}
+        </a>
         <a
           href="#"
           class="text-gray-400 hover:text-text text-sm transition-colors duration-300"
-          >Cookie Policy</a
         >
+          {translateLabels("footer.cookiePolicy")}
+        </a>
       </div>
 
       <a
