@@ -11,6 +11,7 @@ class Menu {
 
         this.isMenuOpen = false;
         this.selectedIndicator = window.location.hash || "#hero";
+        this.isAnimating = false;
 
         this.initElements();
         this.createNavLinks();
@@ -106,7 +107,10 @@ class Menu {
 
     // Close the hamburger menu
     closeMenu() {
+        if (this.isAnimating) return; // evita múltiples cierres
+
         this.isMenuOpen = false;
+        this.isAnimating = true;
 
         if (this.hamburgerInput) this.hamburgerInput.checked = false;
 
@@ -115,11 +119,13 @@ class Menu {
         setTimeout(() => {
             this.menu?.classList.remove("active", "exiting");
             document.body.style.overflow = "";
-        }, 800); // Match exit animation duration
+            this.isAnimating = false;
+        }, 800);
     }
 
     // Toggle menu open/close state
     toggleMenu() {
+        if (this.isAnimating) return;
         this.isMenuOpen ? this.closeMenu() : this.openMenu();
     }
 
