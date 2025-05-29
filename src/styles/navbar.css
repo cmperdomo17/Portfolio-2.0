@@ -242,6 +242,7 @@
 
 /* ====== Additional Mobile Optimizations ====== */
 @media (max-width: 767px) {
+
     .nav-link-wrapper,
     .menu-footer {
         will-change: transform, opacity;
