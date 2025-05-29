@@ -23,6 +23,7 @@
     background: linear-gradient(45deg, #09090b 15%, #0f1820 100%);
     transform: translateX(calc(100% + 100px));
     transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+    overflow-x: hidden;
 }
 
 .menu-overlay.active .menu-container {
@@ -39,6 +40,7 @@
     justify-content: space-between;
     color: white;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* ====== Navigation ====== */
@@ -69,14 +71,26 @@
     opacity: 1;
 }
 
-/* Animation delay by order */
-.nav-link-wrapper:nth-child(1) { transition-delay: 0.05s; }
-.nav-link-wrapper:nth-child(2) { transition-delay: 0.1s; }
-.nav-link-wrapper:nth-child(3) { transition-delay: 0.15s; }
-.nav-link-wrapper:nth-child(4) { transition-delay: 0.2s; }
-.nav-link-wrapper:nth-child(5) { transition-delay: 0.25s; }
+.nav-link-wrapper:nth-child(1) {
+    transition-delay: 0.05s;
+}
 
-/* Link Styles */
+.nav-link-wrapper:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.nav-link-wrapper:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.nav-link-wrapper:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.nav-link-wrapper:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
 .nav-link {
     text-decoration: none;
     color: #fff;
@@ -102,8 +116,8 @@
     font-size: 16px;
     transform: translateX(80px);
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.76, 0, 0.24, 1);
-    transition-delay: 0.3s;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition-delay: 0.4s;
 }
 
 .menu-overlay.active .menu-footer {
@@ -128,14 +142,12 @@
 
 .menu-overlay.exiting .nav-link-wrapper,
 .menu-overlay.exiting .menu-footer {
-    transform: translateX(80px);
+    transform: translateX(60px);
     opacity: 0;
     transition-delay: 0s;
 }
 
 /* ====== Responsive ====== */
-
-/* Desktop */
 @media (min-width: 768px) {
     .menu-body {
         padding: 60px;
@@ -150,30 +162,72 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 767px) {
     .menu-overlay {
         width: 80vw;
     }
 
+    .menu-container {
+        overflow-x: hidden;
+    }
+
+    .menu-body {
+        overflow-x: hidden;
+    }
+
     .menu-nav {
         margin-top: 40px;
         padding-left: 10px;
+        overflow-x: hidden;
     }
 
-    .nav-link {
-        font-size: 40px;
+    .nav-link-wrapper {
+        transform: translateX(40px);
     }
 
     .menu-footer {
         font-size: 12px;
+        transform: translateX(40px);
+        padding: 0 5px;
+    }
+
+    .menu-overlay.active .nav-link-wrapper,
+    .menu-overlay.active .menu-footer {
+        transform: translateX(0);
+    }
+
+    .menu-overlay.exiting .nav-link-wrapper,
+    .menu-overlay.exiting .menu-footer {
+        transform: translateX(30px);
+        opacity: 0;
+        transition-delay: 0s;
+    }
+
+    .nav-link {
+        font-size: 40px;
+        word-break: break-word;
     }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
     .menu-body {
         padding: 40px 20px;
+    }
+
+    .nav-link-wrapper {
+        transform: translateX(30px);
+    }
+
+    .menu-footer {
+        transform: translateX(30px);
+        padding: 0;
+    }
+
+    .menu-overlay.exiting .nav-link-wrapper,
+    .menu-overlay.exiting .menu-footer {
+        transform: translateX(20px);
+        opacity: 0;
+        transition-delay: 0s;
     }
 
     .nav-link {
@@ -183,5 +237,39 @@
     .burger-button {
         width: 60px;
         height: 60px;
+    }
+}
+
+/* ====== Additional Mobile Optimizations ====== */
+@media (max-width: 767px) {
+    .nav-link-wrapper,
+    .menu-footer {
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .nav-link-wrapper:nth-child(1) {
+        transition-delay: 0.08s;
+    }
+
+    .nav-link-wrapper:nth-child(2) {
+        transition-delay: 0.12s;
+    }
+
+    .nav-link-wrapper:nth-child(3) {
+        transition-delay: 0.16s;
+    }
+
+    .nav-link-wrapper:nth-child(4) {
+        transition-delay: 0.20s;
+    }
+
+    .nav-link-wrapper:nth-child(5) {
+        transition-delay: 0.24s;
+    }
+
+    .menu-footer {
+        transition-delay: 0.32s;
     }
 }

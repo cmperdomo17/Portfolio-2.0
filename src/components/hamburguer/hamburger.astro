@@ -21,14 +21,16 @@
   /* ====== Base Styles ====== */
   .hamburger {
     position: fixed;
-    top: 8px;
     right: 48px;
+    top: 11px;
     z-index: 9999;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
   }
 
   /* Hide the checkbox input */
@@ -38,14 +40,18 @@
 
   /* ====== SVG Icon ====== */
   .hamburger svg {
-    height: 3em;
+    height: 2.7em;
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Responsive scaling for small screens */
   @media (max-width: 767px) {
+    .hamburger {
+      right: 24px;
+      top: 14px;
+    }
     .hamburger svg {
-      height: 2.5em;
+      height: 2.3em;
     }
   }
 

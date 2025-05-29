@@ -15,8 +15,6 @@ import AboutMe from "@/sections/aboutMe.astro";
   <section class="scroll-section"><Contact /></section>
 </Layout>
 
-<script src="/src/animations/navbar/navbar-animation.js"></script>
-
 <script type="module">
   import {
     animate,
@@ -53,14 +51,5 @@ import AboutMe from "@/sections/aboutMe.astro";
   body {
     overflow-x: hidden;
     overflow-y: scroll;
-  }
-
-  .scroll-section {
-    min-height: 100vh;
-    opacity: 0;
-    transform: translateX(-120px);
-    transition: box-shadow 0.5s;
-    padding-left: 12px;
-    padding-right: 12px;
   }
 </style>
