@@ -138,7 +138,6 @@
 .menu-footer a:hover {
     color: #02C3BD;
 }
-
 .language-selector {
     position: relative;
     display: inline-flex;
@@ -155,14 +154,22 @@
     border-radius: 0.375rem;
     cursor: pointer;
     outline: none;
+    border: none;
 }
 
 .language-selector select option {
     background-color: #1e1e20;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: none;
+}
+
+.language-selector select option:hover {
+    background-color: transparent;
     color: #02C3BD;
 }
 
-.language-selector select option:hover,
 .language-selector select option:checked {
     background-color: #1e1e20;
     color: #02C3BD;
@@ -172,10 +179,10 @@
     position: absolute;
     right: 0.75rem;
     pointer-events: none;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
 }
 
-.language-selector select:focus + .chevron {
+.language-selector.open .chevron {
     transform: rotate(180deg);
 }
 

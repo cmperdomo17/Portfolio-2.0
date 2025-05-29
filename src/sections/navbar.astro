@@ -29,14 +29,13 @@ const navItems = [
 <!-- Navbar -->
 <nav
   id="navbar"
-  class="fixed top-0 left-0 w-full bg-transparent z-10 py-4 px-6 md:px-12 transition-all duration-300"
+  class="fixed top-0 w-full bg-transparent z-10 py-4 transition-all duration-300"
 >
-  <div class="container mx-auto">
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
+  <div class="container">
+    <div class="flex items-center">
       <a
         href="#hero"
-        class="flex items-center gap-2 text-2xl font-black text-gradient"
+        class="absolute left-[4vw] md:left-[2vw] top-4 flex items-center gap-2 text-2xl font-black text-gradient"
       >
         <GradientText
           colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
@@ -67,15 +66,16 @@ const navItems = [
       <!-- Menu Footer -->
       <div class="menu-footer">
         <!-- Language selector -->
-        <div class="language-selector font-bold text-base md:text-lg">
+        <div
+          class="language-selector font-bold text-base md:text-lg"
+          id="language-selector"
+        >
           <i class="ti ti-world"></i>
           <select
-            class=""
             id="language-select"
-            class=""
-            onchange="window.location.href =
-            this.value"
+            onchange="window.location.href = this.value"
             onfocus="document.getElementById('language-selector').classList.add('open')"
+            onblur="document.getElementById('language-selector').classList.remove('open')"
           >
             {
               Object.entries(languageList).map(
@@ -87,8 +87,7 @@ const navItems = [
               )
             }
           </select>
-          <i class="ti ti-chevron-down absolute right-2 pointer-events-none"
-          ></i>
+          <i class="ti ti-chevron-down chevron"></i>
         </div>
 
         <!-- Social Links -->
