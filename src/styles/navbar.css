@@ -20,7 +20,7 @@
     position: relative;
     width: 100%;
     height: 100dvh;
-    background: linear-gradient(45deg, #09090b 15%, #0f1820 100%);
+    background: linear-gradient(45deg, #09090b 15%, var(--color-navbar-background) 100%);
     transform: translateX(calc(100% + 100px));
     transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
     overflow-x: hidden;
@@ -106,7 +106,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-    color: #02C3BD;
+    color: var(--color-primary)
 }
 
 /* ====== Footer ====== */
@@ -136,7 +136,7 @@
 }
 
 .menu-footer a:hover {
-    color: #02C3BD;
+    color: var(--color-primary);
 }
 .language-selector {
     position: relative;
@@ -167,12 +167,12 @@
 
 .language-selector select option:hover {
     background-color: transparent;
-    color: #02C3BD;
+    color: var(--color-primary)
 }
 
 .language-selector select option:checked {
     background-color: #1e1e20;
-    color: #02C3BD;
+    color: var(--color-primary);
 }
 
 .chevron {
@@ -187,7 +187,7 @@
 }
 
 .language-selector:hover {
-    color: #02C3BD;
+    color: var(--color-primary);
 }
 
 /* ====== Exit Animations ====== */

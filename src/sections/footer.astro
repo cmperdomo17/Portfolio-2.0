@@ -18,7 +18,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
           class="text-2xl font-bold text-gradient flex items-center gap-2"
         >
           <GradientText
-            colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
+            colors={["var(--color-gradient-primary)", "var(--color-gradient-secondary)"]}
             animationSpeed={10}
             showBorder={false}
             className=""
@@ -37,7 +37,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
       <!-- Quick Links -->
       <div class="space-y-4">
         <GradientText
-          colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
+          colors={["var(--color-gradient-primary)", "var(--color-gradient-secondary)"]}
           animationSpeed={10}
           showBorder={false}
           className="font-bold text-lg mb-4"
@@ -98,7 +98,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
       <!-- Services -->
       <div class="space-y-4 flex flex-col items-start">
         <GradientText
-          colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
+          colors={["var(--color-gradient-primary)", "var(--color-gradient-secondary)"]}
           animationSpeed={10}
           showBorder={false}
           className="font-bold text-lg mb-4"
@@ -159,7 +159,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
       <!-- Contact Info -->
       <div class="space-y-4">
         <GradientText
-          colors={["#42d9c8", "#338b80", "#42d9c8", "#338b80"]}
+          colors={["var(--color-gradient-primary)", "var(--color-gradient-secondary)"]}
           animationSpeed={10}
           showBorder={false}
           className="font-bold text-lg mb-4"
@@ -245,12 +245,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
         </a>
       </div>
 
-      <a
-        href="#hero"
-        class="bg-primary hover:bg-tertiary hover:text-text text-background px-3 py-2 rounded-full transition-all duration-300"
-      >
-        <i class="ri-arrow-up-line text-xl font-semibold"></i>
-      </a>
+
     </div>
   </div>
 </footer>

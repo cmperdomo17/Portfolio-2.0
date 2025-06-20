@@ -37,9 +37,10 @@ const currentLang = Astro.currentLocale || "en";
   <body>
     <AnimatedBackground client:load />
     <Navbar />
-    <main>
+    <main class="mx-auto px-4 md:px-8">
       <slot />
     </main>
+
     <Footer />
   </body>
 </html>
