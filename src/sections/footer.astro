@@ -109,49 +109,44 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
 
         <ul class="space-y-2">
           <li>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
-            >
-              <i class="ri-code-box-line"></i>
-              {translateLabels("footer.serviceWebDevelopment")}
-            </a>
+        <span
+          class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
+        >
+          <i class="ri-code-box-line"></i>
+          {translateLabels("footer.serviceWebDevelopment")}
+        </span>
           </li>
           <li>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
-            >
-              <i class="ri-palette-line"></i>
-              {translateLabels("footer.serviceUIUXDesign")}
-            </a>
+        <span
+          class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
+        >
+          <i class="ri-palette-line"></i>
+          {translateLabels("footer.serviceUIUXDesign")}
+        </span>
           </li>
           <li>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
-            >
-              <i class="ri-smartphone-line"></i>
-              {translateLabels("footer.serviceMobileDevelopment")}
-            </a>
+        <span
+          class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
+        >
+          <i class="ri-smartphone-line"></i>
+          {translateLabels("footer.serviceMobileDevelopment")}
+        </span>
           </li>
           <li>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
-            >
-              <i class="ri-server-line"></i>
-              {translateLabels("footer.serviceBackendSolutions")}
-            </a>
+        <span
+          class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
+        >
+          <i class="ri-server-line"></i>
+          {translateLabels("footer.serviceBackendSolutions")}
+        </span>
           </li>
           <li>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
-            >
-              <i class="ri-search-line"></i>
-              {translateLabels("footer.serviceSEOOptimization")}
-            </a>
+        <span
+          class="text-gray-400 hover:text-text transition-colors duration-300 flex items-center gap-2"
+        >
+          <i class="ri-search-line"></i>
+          {translateLabels("footer.serviceSEOOptimization")}
+        </span>
           </li>
         </ul>
       </div>
@@ -187,7 +182,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
             </a>
           </li>
           <li class="text-gray-400 flex items-start gap-3">
-            <i class="ri-map-pin-line text-primary mt-1"></i>
+            <i class="ri-map-pin-line text-primary"></i>
             <span>{translateLabels("footer.contactLocation")}</span>
           </li>
         </ul>
@@ -225,27 +220,29 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
       </p>
 
       <div class="flex items-center gap-6">
-        <a
-          href="#"
-          class="text-gray-400 hover:text-text text-sm transition-colors duration-300"
+        <span
+          class="text-gray-400 hover:text-text text-sm transition-colors duration-300 cursor-pointer"
         >
           {translateLabels("footer.privacyPolicy")}
-        </a>
-        <a
-          href="#"
-          class="text-gray-400 hover:text-text text-sm transition-colors duration-300"
+        </span>
+        <span
+          class="text-gray-400 hover:text-text text-sm transition-colors duration-300 cursor-pointer"
         >
           {translateLabels("footer.termsOfService")}
-        </a>
-        <a
-          href="#"
-          class="text-gray-400 hover:text-text text-sm transition-colors duration-300"
+        </span>
+        <span
+          class="text-gray-400 hover:text-text text-sm transition-colors duration-300 cursor-pointer"
         >
           {translateLabels("footer.cookiePolicy")}
-        </a>
+        </span>
       </div>
 
-
+      <a
+        href="#hero"
+        class="bg-primary hover:bg-tertiary hover:text-text text-background px-3 py-2 rounded-full transition-all duration-300"
+      >
+        <i class="ri-arrow-up-line text-xl font-semibold"></i>
+      </a>
     </div>
   </div>
 </footer>

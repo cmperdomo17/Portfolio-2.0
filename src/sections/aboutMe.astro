@@ -24,7 +24,7 @@ const translateLabels = useTranslations(currentLang as 'en' | 'es');
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
       <!-- About Image -->
       <div
         class="relative max-w-md mx-auto md:mx-0 animate-fadeIn"
@@ -38,7 +38,7 @@ const translateLabels = useTranslations(currentLang as 'en' | 'es');
       </div>
 
       <!-- About Content -->
-      <div class="space-y-6">
+      <div class="space-y-6 lg:col-span-2 text-center lg:text-left">
         <GradientText
           colors={["var(--color-gradient-primary)", "var(--color-gradient-secondary)"]}
           animationSpeed={10}
