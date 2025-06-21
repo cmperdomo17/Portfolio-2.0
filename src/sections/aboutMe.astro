@@ -9,7 +9,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
 ---
 
 <section id="about" class="sections-separator">
-  <div class="container">
+  <div class="container mx-auto px-4 md:px-8 relative">
     <div class="flex flex-col items-center mb-16">
       <span class="text-primary font-medium mb-4 flex items-center gap-2">
         <div class="w-8 h-0.5 bg-primary"></div>
@@ -24,21 +24,18 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-4 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
       <!-- About Image -->
       <div
-        class="relative max-w-md mx-auto animate-fadeIn"
-        style="--delay: 0.5s"
+      class="lg:col-span-1 relative max-w-md mx-auto animate-fadeIn"
+      style="--delay: 0.5s"
       >
-        <!-- Background Gradient Blob -->
-        <div class="hero-gradients absolute inset-0 rounded-4xl"></div>
-
-        <!-- Image -->
-        <CardImage className="pb-16 px-10 md:pb-0 md:px-0" />
+      <!-- Image -->
+      <CardImage className="pb-16 px-10 md:p-0" />
       </div>
 
       <!-- About Content -->
-      <div class="space-y-6 text-left">
+      <div class="lg:col-span-2 space-y-6 text-left">
         <GradientText
           colors={[
             "var(--color-gradient-primary)",
