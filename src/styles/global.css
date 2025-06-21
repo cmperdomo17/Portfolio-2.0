@@ -36,6 +36,10 @@ body {
     overflow-y: scroll;
 }
 
+.sections-separator {
+    @apply py-14 md:py-20 lg:py-24 xl:py-28;
+}
+
 main {
     flex: 1;
 }

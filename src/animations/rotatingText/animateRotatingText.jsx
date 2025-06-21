@@ -7,7 +7,7 @@ export default function AnimateRotatingText({
     rotatingTexts
 }) {
     return (
-        <div className="text-2xl md:text-3xl leading-8 flex flex-row items-center justify-center md:justify-start font-light overflow-hidden text-white animate-fadeUp" style={{ "--delay": "0.7s" }}>
+        <div className="text-2xl md:text-3xl leading-8 flex flex-row items-center justify-start font-light overflow-hidden text-white animate-fadeUp" style={{ "--delay": "0.7s" }}>
             <LayoutGroup>
                 <motion.div className="font-extrabold flex items-center gap-3" layout>
                     <motion.span

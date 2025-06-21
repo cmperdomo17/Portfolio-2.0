@@ -11,13 +11,13 @@ const currentLang = Astro.currentLocale || "en";
 const translateLabels = useTranslations(currentLang as "en" | "es");
 ---
 
-<section id="hero" class="min-h-screen pt-24 pb-16 flex items-center relative">
+<section id="hero" class="min-h-screen sections-separator flex items-center relative">
   <div class="container">
     <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 md:gap-0 lg:gap-0">
       <!-- Hero Content -->
       <div class="md:col-span-2 space-y-7 reveal-content">
         <div
-          class="flex m-0 justify-center md:justify-start w-full animate-fadeUp"
+          class="flex m-0 justify-start w-full animate-fadeUp"
           style="--delay: 0.2s"
         >
           <div
@@ -43,7 +43,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
           <div class="flex animate-fadeUp" style="--delay: 0.4s">
             <AnimatedSplitText
               text={translateLabels("hero.greeting")}
-              className="text-5xl lg:text-6xl font-extrabold text-center md:text-start"
+              className="text-5xl lg:text-6xl font-extrabold text-start"
               highlightText="Mario Perdomo"
               client:load
               x={0}
@@ -62,7 +62,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
           <div class="animate-fadeUp" style="--delay: 0.8s">
             <AnimatedSplitText
               text={translateLabels("hero.description")}
-              className="text-text/80 text-lg max-w-lg text-center md:text-start"
+              className="text-text/80 text-lg max-w-lg text-start"
               client:load
               x={0}
               y={20}
@@ -73,7 +73,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
         </div>
 
         <div
-          class="flex flex-wrap gap-4 pt-4 animate-fadeUp justify-center md:justify-start"
+          class="flex flex-wrap gap-4 pt-4 animate-fadeUp justify-start"
           style="--delay: 1s"
         >
           <a
