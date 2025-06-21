@@ -26,15 +26,6 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
             <span class="flex items-center gap-2">
               <span class="size-[10px] rounded-full bg-primary animate-pulse"
               ></span>
-              <!-- <AnimatedSplitText
-                text={translateLabels("hero.availability")}
-                className="text-text/80 text-sm font-semibold"
-                client:load
-                x={0}
-                y={10}
-                duration={0.8}
-                stagger={0.1}
-              /> -->
               <p class="text-text/80 text-sm font-semibold">
                 {translateLabels("hero.availability")}
               </p>
@@ -63,15 +54,6 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
           />
 
           <div class="animate-fadeUp" style="--delay: 0.8s">
-            <!-- <AnimatedSplitText
-              text={translateLabels("hero.description")}
-              className="text-text/80 text-lg max-w-lg text-start"
-              client:load
-              x={0}
-              y={20}
-              duration={1}
-              stagger={0.02}
-            /> -->
             <p class="text-text/80 text-lg max-w-lg text-start">
               {translateLabels("hero.description")}
             </p>

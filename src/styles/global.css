@@ -15,12 +15,6 @@
     --color-navbar-background: #0f1a2e;
 }
 
-html {
-    ::-webkit-scrollbar {
-        width: 0;
-    }
-}
-
 :root {
     background-color: var(--color-background);
     color: var(--color-text);
@@ -32,8 +26,15 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+@media (min-width: 1024px) {
+    html {
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+    }
 }
 
 .sections-separator {
