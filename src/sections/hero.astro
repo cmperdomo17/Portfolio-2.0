@@ -11,18 +11,14 @@ const currentLang = Astro.currentLocale || "en";
 const translateLabels = useTranslations(currentLang as "en" | "es");
 ---
 
-<section
-  id="hero"
-  class="min-h-screen sections-separator flex items-center relative"
->
+<section id="hero" class="min-h-screen sections-separator flex items-center relative">
   <div class="container">
-    <div
-      class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 md:gap-0 lg:gap-0"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 md:gap-0 lg:gap-0">
       <!-- Hero Content -->
       <div class="md:col-span-2 space-y-7 reveal-content">
         <div
-          class="flex m-0 justify-start w-full"
+          class="flex m-0 justify-start w-full animate-fadeUp"
+          style="--delay: 0.2s"
         >
           <div
             class="inline-block py-1 px-3 rounded-full bg-transparent border border-primary text-sm mb-2"
@@ -38,7 +34,7 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
         </div>
 
         <div class="flex flex-col gap-6 pt-2">
-          <div class="flex">
+          <div class="flex animate-fadeUp" style="--delay: 0.4s">
             <AnimatedSplitText
               text={translateLabels("hero.greeting")}
               className="text-5xl lg:text-6xl font-extrabold text-start"
@@ -57,13 +53,16 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
             client:load
           />
 
-          <p class="text-text/80 text-lg max-w-lg text-start">
-            {translateLabels("hero.description")}
-          </p>
+          <div class="animate-fadeUp" style="--delay: 0.8s">
+            <p class="text-text/80 text-lg max-w-lg text-start">
+              {translateLabels("hero.description")}
+            </p>
+          </div>
         </div>
 
         <div
-          class="flex flex-wrap gap-4 pt-4 justify-start"
+          class="flex flex-wrap gap-4 pt-4 animate-fadeUp justify-start"
+          style="--delay: 1s"
         >
           <a
             href="#projects"
