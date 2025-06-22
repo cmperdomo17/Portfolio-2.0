@@ -16,22 +16,28 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
         {translateLabels("about.title")}
         <div class="w-8 h-0.5 bg-primary"></div>
       </span>
-      <h2
-        class="text-5xl font-extrabold bg-gradient-to-r from-primary to-text text-transparent bg-clip-text text-center"
+      <GradientText
+        colors={[
+          "var(--color-gradient-primary)",
+          "var(--color-gradient-secondary)",
+        ]}
+        animationSpeed={10}
+        showBorder={false}
+        className="text-5xl font-extrabold bg-clip-text text-center"
+        client:load
       >
         {translateLabels("about.headline")}{" "}
-        <span class="text-gradient">{translateLabels("about.highlight")}</span>
-      </h2>
+      </GradientText>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
       <!-- About Image -->
       <div
-      class="lg:col-span-1 relative max-w-md mx-auto animate-fadeIn"
-      style="--delay: 0.5s"
+        class="lg:col-span-1 relative max-w-md mx-auto animate-fadeIn"
+        style="--delay: 0.5s"
       >
-      <!-- Image -->
-      <CardImage className="pb-16 px-10 md:p-0" />
+        <!-- Image -->
+        <CardImage className="pb-16 px-10 md:p-0" />
       </div>
 
       <!-- About Content -->

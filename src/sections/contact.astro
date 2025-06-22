@@ -1,5 +1,6 @@
 ---
 import SocialLinks from "@/components/socialLinks/socialLinks.astro";
+import GradientText from "@/animations/gradientText/gradientText";
 import { useTranslations } from "@/i18n/utils";
 
 const currentLang = Astro.currentLocale || "en";
@@ -9,13 +10,21 @@ const translateLabels = useTranslations(currentLang as "en" | "es");
 <section id="contact" class="sections-separator relative overflow-hidden">
   <div class="container mx-auto px-4 md:px-8 relative">
     <!-- Section Header -->
-    <div class="text-center mb-12">
-      <h2
-        class="text-5xl font-extrabold bg-gradient-to-r from-primary to-white text-transparent bg-clip-text mb-4"
+    <div class="flex flex-col items-center mb-16 text-start md:text-center">
+      <GradientText
+        colors={[
+          "var(--color-gradient-primary)",
+          "var(--color-gradient-secondary)",
+        ]}
+        animationSpeed={10}
+        showBorder={false}
+        className="text-5xl font-extrabold bg-clip-text"
+        client:load
       >
         {translateLabels("contact.title")}
-      </h2>
-      <p class="text-text/80 max-w-2xl mx-auto">
+      </GradientText>
+
+      <p class="text-gray-300 max-w-2xl mx-auto mt-4">
         {translateLabels("contact.description")}
       </p>
     </div>
